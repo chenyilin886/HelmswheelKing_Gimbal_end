@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -ID:\Keil_V5\ARM\ARMCLANG/include
+    - -ID:\Keil_V5\ARM\ARMCLANG/include/libcxx
+  Remove: []
+  CompilationDatabase: ./build/SG_CHASSIS_C_2024_11_5
+  Compiler: D:\Keil_V5\ARM\ARMCLANG\bin\armclang.exe

@@ -1,0 +1,25 @@
+﻿{
+    "cmake.cmakePath":  "D:/STM32_Tools/cmake/bin/cmake.exe",
+    "cmake.generator":  "Ninja",
+    "cmake.environment":  {
+                              "PATH":  "D:/STM32_Tools/gcc/bin;C:\\windows\\system32\\cmd.exe;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files\\dotnet\\;D:\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\mingw64\\bin;D:\\msys2\\ucrt64\\bin;C:\\Windows\\System32;D:\\Program Files\\Git\\cmd;D:\\Program Files\\CMake\\bin;D:\\Program Files\\Arm\\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\\bin;D:\\mingw64\\bin;C:\\xpack-openocd-0.12.0-7\\bin;D:\\CodeTools\\msys64\\usr\\bin;D:\\CodeTools\\msys64\\mingw64\\bin;D:\\CodeTools\\msys64\\ucrt64\\bin;D:\\CodeTools\\Compiler\\arm-none-eabi-gcc\\bin;D:\\nodejs\\;D:\\xpack-openocd-0.12.0-7-win32-x64\\xpack-openocd-0.12.0-7\\bin;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mingw64\\bin;D:\\msys2\\ucrt64\\bin;D:\\Users\\chen\u0027yi\u0027lin\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\chen\u0027yi\u0027lin\\AppData\\Roaming\\npm"
+                          },
+    "cmake.configureSettings":  {
+                                    "CMAKE_C_COMPILER":  "D:/STM32_Tools/gcc/bin/arm-none-eabi-gcc.exe",
+                                    "CMAKE_CXX_COMPILER":  "D:/STM32_Tools/gcc/bin/arm-none-eabi-g++.exe",
+                                    "CMAKE_MAKE_PROGRAM":  "D:/STM32_Tools/ninja/ninja.exe",
+                                    "CMAKE_TOOLCHAIN_FILE":  "D:/Project/HelmswheelKing/cmake/gcc-arm-none-eabi.cmake"
+                                },
+    "cmake.useCMakePresets":  "never",
+    "cortex-debug.gdbPath":  "D:/STM32_Tools/gcc/bin/arm-none-eabi-gdb.exe",
+    "cortex-debug.openocdPath":  "D:/STM32_Tools/openocd/bin/openocd.exe",
+    "cortex-debug.armToolchainPath":  "D:/STM32_Tools/gcc/bin",
+    "C_Cpp.intelliSenseEngine":  "disabled",
+    "clangd.arguments":  [
+                             "--compile-commands-dir=${workspaceFolder}/build",
+                             "--background-index",
+                             "--header-insertion=never",
+                             "--query-driver=D:/STM32_Tools/gcc/bin/arm-none-eabi-g*.exe",
+                             "--query-driver=D:/STM32_Tools/gcc/bin/arm-none-eabi-gcc*.exe"
+                         ]
+}

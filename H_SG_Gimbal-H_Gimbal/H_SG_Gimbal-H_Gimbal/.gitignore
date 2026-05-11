@@ -1,0 +1,50 @@
+# Keil MDK-ARM Build Output
+MDK-ARM/SG_GIMBAL_C_2025_2_7/
+MDK-ARM/SG_GIMBAL_C_2025_2_7_EIDE/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/Listings/
+MDK-ARM/Objects/
+
+# Keil Project Local Settings
+*.uvoptx
+*.uvguix.*
+*.scvd
+
+# Compiler/Linker Output (General)
+*.o
+*.d
+*.crf
+*.dep
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.htm
+*.iex
+*.build_log.htm
+
+# VS Code
+.vscode/
+.vs/
+*.code-workspace
+CppProperties.json
+
+# EIDE
+EIDE/build/
+EIDE/.eide/
+EIDE/.pack/
+EIDE/.cmsis/
+
+# STM32CubeMX
+.mxproject
+
+# System / Misc
+*.bak
+*.tmp
+*.zip
+Thumbs.db
+Desktop.ini
+JLinkLog.txt

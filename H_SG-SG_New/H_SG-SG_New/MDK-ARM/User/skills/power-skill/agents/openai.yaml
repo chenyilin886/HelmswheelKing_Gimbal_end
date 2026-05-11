@@ -1,0 +1,5 @@
+interface:
+  display_name: "Power Skill"
+  short_description: "RoboMaster chassis power limiting, buffer handling, and output scaling guidance."
+  default_prompt: "Use $power-skill to design or debug chassis power limiting, buffer-aware scaling, and motor output protection."
+

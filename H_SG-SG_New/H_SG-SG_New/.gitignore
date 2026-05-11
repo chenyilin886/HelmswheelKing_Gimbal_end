@@ -1,0 +1,55 @@
+﻿# IDE / Editor
+.vscode/
+.vs/
+.idea/
+*.code-workspace
+CppProperties.json
+
+# Keil / MDK-ARM
+MDK-ARM/SG_CHASSIS_C_2024_11_5/
+MDK-ARM/SG_GIMBAL_C_2025_2_7/
+MDK-ARM/SG_CHASSIS_C_2024_11_5_EIDE/
+MDK-ARM/RTE/
+MDK-ARM/DebugConfig/
+MDK-ARM/.pack/
+MDK-ARM/*.uvoptx
+MDK-ARM/*.uvguix.*
+MDK-ARM/*.uvmpw
+MDK-ARM/build/
+
+# EIDE
+.eide/
+EIDE/.pack/
+EIDE/build/
+build/
+
+# Build outputs / binaries
+*.bak
+*.dep
+*.o
+*.obj
+*.d
+*.crf
+*.map
+*.map.old
+*.htm
+*.lnp
+*.sct
+*.lst
+*.axf
+*.elf
+*.bin
+*.hex
+*.lib
+
+# Logs / temp
+*.log
+*.tmp
+*.temp
+*.cache
+Thumbs.db
+Desktop.ini
+
+# OS / Python cache
+__pycache__/
+*.pyc

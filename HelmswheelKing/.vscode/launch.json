@@ -1,0 +1,19 @@
+﻿{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "🔥 Run / Debug",
+                               "cwd":  "${workspaceFolder}",
+                               "executable":  "${command:cmake.launchTargetPath}",
+                               "request":  "launch",
+                               "type":  "cortex-debug",
+                               "runToEntryPoint":  "main",
+                               "showDevDebugOutput":  "none",
+                               "servertype":  "openocd",
+                               "configFiles":  [
+                                                   "interface/cmsis-dap.cfg",
+                                                   "target/stm32f4x.cfg"
+                                               ]
+                           }
+                       ]
+}

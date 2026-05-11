@@ -1,0 +1,5 @@
+interface:
+  display_name: "Chassis Skill"
+  short_description: "RoboMaster chassis kinematics, motion control, and tuning workflow guidance."
+  default_prompt: "Use $chassis-skill to design or debug chassis kinematics, wheel decomposition, and controller tuning."
+

@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Project/HelmswheelKing/build/cmake_install.cmake",
+		"D:/Project/HelmswheelKing/build/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
