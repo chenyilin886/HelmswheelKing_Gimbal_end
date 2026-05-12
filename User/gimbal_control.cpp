@@ -63,6 +63,10 @@ void StartUARTReceive()
 void EnableMotors()
 {
     osDelay(100);
+    dm_motor.ClearErr(PITCH_ID, BSP::Motor::DM::Model::MIT);
+    osDelay(4);
+    dm_motor.ClearErr(YAW_ID, BSP::Motor::DM::Model::MIT);
+    osDelay(10);
     dm_motor.On(PITCH_ID, BSP::Motor::DM::Model::MIT);
     osDelay(4);
     dm_motor.On(YAW_ID, BSP::Motor::DM::Model::MIT);
@@ -134,31 +138,38 @@ void Update()
 
 void SendToChassis()
 {
-
-    float left_x = dr16.get_left_x();
-    float left_y = dr16.get_left_y();
-
+    float left_x = 0.0f;
+    float left_y = 0.0f;
     float yaw_angle_err = 0.0f;
-    if (encoder_initialized)
-    {
-        yaw_angle_err = CalcuGimbalToChassisAngle();
-    }
-
     Comm::ChassisMode mode{};
-    uint8_t s1 = dr16.get_s1();
-    uint8_t s2 = dr16.get_s2();
 
-    if (s1 == BSP::REMOTE_CONTROL::RemoteController::DOWN
-     && s2 == BSP::REMOTE_CONTROL::RemoteController::DOWN)
+    if (!dr16.isConnected() || !encoder_initialized)
     {
         mode.stop = 1;
     }
-    else if (s2 == BSP::REMOTE_CONTROL::RemoteController::UP)
-        mode.rotating = 1;
-    else if (s2 == BSP::REMOTE_CONTROL::RemoteController::MIDDLE)
-        mode.follow = 1;
-    else if (s2 == BSP::REMOTE_CONTROL::RemoteController::DOWN)
-        mode.stop = 1;
+    else
+    {
+        left_x = dr16.get_left_x();
+        left_y = dr16.get_left_y();
+        yaw_angle_err = CalcuGimbalToChassisAngle();
+
+        uint8_t s1 = dr16.get_s1();
+        uint8_t s2 = dr16.get_s2();
+
+        if (s1 == BSP::REMOTE_CONTROL::RemoteController::DOWN
+         && s2 == BSP::REMOTE_CONTROL::RemoteController::DOWN)
+        {
+            mode.stop = 1;
+        }
+        else if (s2 == BSP::REMOTE_CONTROL::RemoteController::UP)
+            mode.rotating = 1;
+        else if (s2 == BSP::REMOTE_CONTROL::RemoteController::MIDDLE)
+            mode.follow = 1;
+        else if (s2 == BSP::REMOTE_CONTROL::RemoteController::DOWN)
+            mode.stop = 1;
+        else
+            mode.stop = 1;
+    }
 
     g2c.packFrame(left_x, left_y, yaw_angle_err, mode);
 
@@ -230,7 +241,7 @@ float ZeroCrossingProcessing(float expectations, float feedback, float maxpos)
 
 float CalcuGimbalToChassisAngle()
 {
-    float encoder_angle = dm_motor.getAngleDeg(YAW_ID);
+    float encoder_angle = dm_motor.getAngle0_360(YAW_ID);
     return ZeroCrossingProcessing(static_cast<float>(YAW_INIT_ANGLE_DEG), encoder_angle, 360.0f) - encoder_angle;
 }
 

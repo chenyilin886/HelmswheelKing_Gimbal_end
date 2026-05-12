@@ -93,6 +93,9 @@ void Chassis_Control_Task()
         float ly = c2g.getLeftY();
         float yaw_err = c2g.getYawAngleErr();
 
+        while (yaw_err > 3.14159265f) yaw_err -= 2.0f * 3.14159265f;
+        while (yaw_err < -3.14159265f) yaw_err += 2.0f * 3.14159265f;
+
         float cos_theta = cosf(yaw_err + 3.14159265f);
         float sin_theta = sinf(yaw_err + 3.14159265f);
 
@@ -108,10 +111,12 @@ void Chassis_Control_Task()
         }
         else if (c2g.isFollowMode())
         {
-            float follow_kp = 3.0f;
+            float follow_kp = 0.8f;
             if (fabsf(yaw_err) > 0.034f)
             {
-                target_vw = yaw_err * follow_kp;
+                target_vw = -yaw_err * follow_kp;
+                if (target_vw > max_angular_speed) target_vw = max_angular_speed;
+                if (target_vw < -max_angular_speed) target_vw = -max_angular_speed;
             }
         }
 
