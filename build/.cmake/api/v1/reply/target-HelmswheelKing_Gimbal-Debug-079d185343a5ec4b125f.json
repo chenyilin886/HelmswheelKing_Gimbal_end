@@ -33,13 +33,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 90,
+				"line" : 98,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 66,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
@@ -68,7 +68,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -fno-rtti -fno-exceptions -fno-threadsafe-statics -g"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -fno-rtti -fno-exceptions -fno-threadsafe-statics -g"
 				}
 			],
 			"defines" : 
@@ -102,11 +102,15 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/IMU"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
 				},
 				{
 					"backtrace" : 3,
@@ -135,6 +139,18 @@
 				{
 					"backtrace" : 3,
 					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/PID"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/ADRC"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Filter"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Feedforward"
 				},
 				{
 					"backtrace" : 3,
@@ -191,14 +207,17 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12,
+				13,
+				14
 			]
 		},
 		{
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
 				}
 			],
 			"defines" : 
@@ -232,11 +251,15 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/IMU"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
 				},
 				{
 					"backtrace" : 3,
@@ -265,6 +288,18 @@
 				{
 					"backtrace" : 3,
 					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/PID"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/ADRC"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Filter"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Feedforward"
 				},
 				{
 					"backtrace" : 3,
@@ -318,10 +353,6 @@
 			},
 			"sourceIndexes" : 
 			[
-				12,
-				13,
-				14,
-				15,
 				16,
 				17,
 				18,
@@ -356,14 +387,18 @@
 				47,
 				48,
 				49,
-				50
+				50,
+				51,
+				52,
+				53,
+				54
 			]
 		},
 		{
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -x assembler-with-cpp -MMD -MP -g"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -x assembler-with-cpp -MMD -MP -g"
 				}
 			],
 			"defines" : 
@@ -397,11 +432,15 @@
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/RemoteControl"
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/IMU"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch"
 				},
 				{
 					"backtrace" : 3,
@@ -430,6 +469,18 @@
 				{
 					"backtrace" : 3,
 					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/PID"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/ADRC"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Filter"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "D:/Project/HelmswheelKing_Gimbal/Alg/Feedforward"
 				},
 				{
 					"backtrace" : 3,
@@ -475,7 +526,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				51
+				55
 			]
 		}
 	],
@@ -485,7 +536,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -fno-rtti -fno-exceptions -fno-threadsafe-statics -g",
+				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -fno-rtti -fno-exceptions -fno-threadsafe-statics -g",
 				"role" : "flags"
 			},
 			{
@@ -530,7 +581,6 @@
 				12,
 				13,
 				14,
-				15,
 				16,
 				17,
 				18,
@@ -565,14 +615,25 @@
 				47,
 				48,
 				49,
-				50
+				50,
+				51,
+				52,
+				53,
+				54
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				15
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				51
+				55
 			]
 		}
 	],
@@ -600,6 +661,24 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "Alg/PID/pid.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Alg/ADRC/adrc.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Alg/Filter/Filter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Alg/Feedforward/Feedforward.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -649,6 +728,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "BSP/Common/StateWatch/buzzer_manager.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "BSP/IMU/HI12_imu.hpp",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 2,
@@ -888,7 +972,7 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 2,
 			"path" : "startup_stm32f407xx.s",
-			"sourceGroupIndex" : 1
+			"sourceGroupIndex" : 2
 		}
 	],
 	"type" : "EXECUTABLE"

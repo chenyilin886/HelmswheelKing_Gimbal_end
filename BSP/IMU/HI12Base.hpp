@@ -1,8 +1,8 @@
 #ifndef HI12BASE_HPP
 #define HI12BASE_HPP 
 
-#include "../user/core/BSP/Common/StateWatch/state_watch.hpp"
-#include "../user/core/BSP/Common/StateWatch/buzzer_manager.hpp"
+#include "../Common/StateWatch/state_watch.hpp"
+#include "../Common/StateWatch/buzzer_manager.hpp"
 #include <string.h>
 
 namespace BSP::IMU

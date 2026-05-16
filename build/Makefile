@@ -128,6 +128,78 @@ HelmswheelKing_Gimbal/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/build
 .PHONY : HelmswheelKing_Gimbal/fast
 
+Alg/ADRC/adrc.obj: Alg/ADRC/adrc.cpp.obj
+.PHONY : Alg/ADRC/adrc.obj
+
+# target to build an object file
+Alg/ADRC/adrc.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj
+.PHONY : Alg/ADRC/adrc.cpp.obj
+
+Alg/ADRC/adrc.i: Alg/ADRC/adrc.cpp.i
+.PHONY : Alg/ADRC/adrc.i
+
+# target to preprocess a source file
+Alg/ADRC/adrc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.i
+.PHONY : Alg/ADRC/adrc.cpp.i
+
+Alg/ADRC/adrc.s: Alg/ADRC/adrc.cpp.s
+.PHONY : Alg/ADRC/adrc.s
+
+# target to generate assembly for a file
+Alg/ADRC/adrc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.s
+.PHONY : Alg/ADRC/adrc.cpp.s
+
+Alg/Feedforward/Feedforward.obj: Alg/Feedforward/Feedforward.cpp.obj
+.PHONY : Alg/Feedforward/Feedforward.obj
+
+# target to build an object file
+Alg/Feedforward/Feedforward.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj
+.PHONY : Alg/Feedforward/Feedforward.cpp.obj
+
+Alg/Feedforward/Feedforward.i: Alg/Feedforward/Feedforward.cpp.i
+.PHONY : Alg/Feedforward/Feedforward.i
+
+# target to preprocess a source file
+Alg/Feedforward/Feedforward.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.i
+.PHONY : Alg/Feedforward/Feedforward.cpp.i
+
+Alg/Feedforward/Feedforward.s: Alg/Feedforward/Feedforward.cpp.s
+.PHONY : Alg/Feedforward/Feedforward.s
+
+# target to generate assembly for a file
+Alg/Feedforward/Feedforward.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.s
+.PHONY : Alg/Feedforward/Feedforward.cpp.s
+
+Alg/Filter/Filter.obj: Alg/Filter/Filter.cpp.obj
+.PHONY : Alg/Filter/Filter.obj
+
+# target to build an object file
+Alg/Filter/Filter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj
+.PHONY : Alg/Filter/Filter.cpp.obj
+
+Alg/Filter/Filter.i: Alg/Filter/Filter.cpp.i
+.PHONY : Alg/Filter/Filter.i
+
+# target to preprocess a source file
+Alg/Filter/Filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.i
+.PHONY : Alg/Filter/Filter.cpp.i
+
+Alg/Filter/Filter.s: Alg/Filter/Filter.cpp.s
+.PHONY : Alg/Filter/Filter.s
+
+# target to generate assembly for a file
+Alg/Filter/Filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.s
+.PHONY : Alg/Filter/Filter.cpp.s
+
 Alg/PID/pid.obj: Alg/PID/pid.cpp.obj
 .PHONY : Alg/PID/pid.obj
 
@@ -1369,6 +1441,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... HelmswheelKing_Gimbal
+	@echo ... Alg/ADRC/adrc.obj
+	@echo ... Alg/ADRC/adrc.i
+	@echo ... Alg/ADRC/adrc.s
+	@echo ... Alg/Feedforward/Feedforward.obj
+	@echo ... Alg/Feedforward/Feedforward.i
+	@echo ... Alg/Feedforward/Feedforward.s
+	@echo ... Alg/Filter/Filter.obj
+	@echo ... Alg/Filter/Filter.i
+	@echo ... Alg/Filter/Filter.s
 	@echo ... Alg/PID/pid.obj
 	@echo ... Alg/PID/pid.i
 	@echo ... Alg/PID/pid.s

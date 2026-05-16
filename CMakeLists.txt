@@ -52,6 +52,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/User/gimbal_to_chassis.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/RemoteControl/DT7.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Alg/PID/pid.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/ADRC/adrc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/Filter/Filter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/Feedforward/Feedforward.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN/interface/can_bus.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN/impl/can_bus_impl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN/impl/can_device_impl.cpp
@@ -60,6 +63,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/UART/impl/uart_device_impl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch/state_watch.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch/buzzer_manager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/IMU/HI12_imu.hpp
 )
 
 # Add include paths
@@ -68,8 +72,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Motor
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Motor/DM
-    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/RemoteControl
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/IMU
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN/interface
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/CAN/impl
@@ -77,6 +82,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/UART/interface
     ${CMAKE_CURRENT_SOURCE_DIR}/HAL/UART/impl
     ${CMAKE_CURRENT_SOURCE_DIR}/Alg/PID
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/ADRC
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/Filter
+    ${CMAKE_CURRENT_SOURCE_DIR}/Alg/Feedforward
     ${CMAKE_CURRENT_SOURCE_DIR}/User
     ${CMAKE_CURRENT_SOURCE_DIR}/Core/Inc
 )

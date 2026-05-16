@@ -144,7 +144,7 @@ void gimbalTask(void *argument)
 {
   /* USER CODE BEGIN gimbalTask */
   Gimbal_Init();
-  Gimbal_EnableMotors();
+  osDelay(500);
 
   /* Infinite loop */
   for(;;)

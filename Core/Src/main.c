@@ -99,6 +99,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   Gimbal_InitCANBus();
   Gimbal_StartUARTReceive();
+  Gimbal_StartIMUReceive();
   /* USER CODE END 2 */
 
   /* Init scheduler */

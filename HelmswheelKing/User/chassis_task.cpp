@@ -112,7 +112,7 @@ void Chassis_Control_Task()
         else if (c2g.isFollowMode())
         {
             float follow_kp = 0.8f;
-            if (fabsf(yaw_err) > 0.034f)
+            if (fabsf(yaw_err) > 0.12f)
             {
                 target_vw = -yaw_err * follow_kp;
                 if (target_vw > max_angular_speed) target_vw = max_angular_speed;

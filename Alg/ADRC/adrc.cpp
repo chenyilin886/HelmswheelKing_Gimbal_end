@@ -4,7 +4,7 @@ float ALG::ADRC::FirstLADRC::LADRC_1(float input, float feedback)
 {
     LESO_1(feedback);
     LSEF_1(input);
-    std::clamp(U, GetMin(), GetMax());
+    U = std::clamp(U, GetMin(), GetMax());
     return U;
 }
 
@@ -36,7 +36,7 @@ float ALG::ADRC::SecondLADRC::LADRC_2(float input, float feedback)
     TD_2(input);
     LESO_2(feedback);
     LSEF_2();
-    std::clamp(U, GetMin(), GetMax());
+    U = std::clamp(U, GetMin(), GetMax());
     return U;
 }
 

@@ -6,18 +6,33 @@
 BSP::Motor::DM::J4310<2> dm_motor(0x00, {6, 8}, {4, 7});
 BSP::REMOTE_CONTROL::RemoteController dr16;
 Comm::GimbalToChassis g2c;
+BSP::IMU::HI12_float imu;
+  
+ALG::LADRC::LADRC yaw_adrc(200.0f, 10.0f, 0.0f, 35.0f, 22.0f, 0.001f, 3.5f);
+ALG::LADRC::LADRC pitch_adrc(50.0f, 8.0f, 0.0f, 35.0f, 20.0f, 0.001f, 3.5f);
 
-ALG::PID::PID yaw_speed_pid(1.0f, 0.0f, 0.05f, 3.0f, 1.0f, 5.0f);
-ALG::PID::PID pitch_angle_pid(20.0f, 0.01f, 0.0f, 30.0f, 5.0f, 3.0f);
-ALG::PID::PID pitch_speed_pid(1.0f, 0.01f, 0.00f, 3.0f, 1.0f, 5.0f);
+ALG::PID::PID yaw_angle_pid(8.0f, 0.02f, 0.3f, 8.0f, 2.0f, 0.04f);
 
-float target_pitch_rad = 0.0f;
+Alg::Feedforward::Gravity pitch_gravity_ff(1.0f, 0.0f);
+
+float target_yaw_rad = 0.0f;
+float target_pitch_deg = 0.0f;
 GimbalDebugData gimbal_debug = {};
 
 static float pitch_offset = 0.0f;
 static bool encoder_initialized = false;
+static bool imu_initialized = false;
 static bool motors_enabled = false;
+static uint8_t enable_step = 0;
+static uint8_t enable_wait = 0;
+static uint8_t yaw_runaway_counter = 0;
+static uint8_t pitch_runaway_counter = 0;
+static bool yaw_runaway_flag = false;
+static bool pitch_runaway_flag = false;
+static uint16_t connect_wait_counter = 0;
+static constexpr uint16_t CONNECT_WAIT_MAX = 150;
 static uint8_t dbus_rx_buffer[Gimbal::DBUS_BUF_SIZE];
+static uint8_t imu_rx_buffer[Gimbal::IMU_BUF_SIZE];
 
 static float Clamp(float v, float lo, float hi)
 {
@@ -25,13 +40,78 @@ static float Clamp(float v, float lo, float hi)
     if (v > hi) return hi;
     return v;
 }
+
+static constexpr float PI_F = 3.14159265f;
+
+static float NormalizeAngle(float angle)
+{
+    while (angle > PI_F) angle -= 2.0f * PI_F;
+    while (angle < -PI_F) angle += 2.0f * PI_F;
+    return angle;
+}
+
+static void StartMotorEnable()
+{
+    enable_step = 1;
+    enable_wait = 0;
+}
+
+static bool ProcessMotorEnable()
+{
+    if (enable_step == 0) return false;
+
+    switch (enable_step)
+    {
+        case 1:
+            dm_motor.ClearErr(Gimbal::PITCH_ID, BSP::Motor::DM::Model::MIT);
+            enable_wait = 0;
+            enable_step = 2;
+            break;
+        case 2:
+            if (++enable_wait >= 4)
+            {
+                dm_motor.ClearErr(Gimbal::YAW_ID, BSP::Motor::DM::Model::MIT);
+                enable_wait = 0;
+                enable_step = 3;
+            }
+            break;
+        case 3:
+            if (++enable_wait >= 4)
+            {
+                dm_motor.On(Gimbal::PITCH_ID, BSP::Motor::DM::Model::MIT);
+                enable_wait = 0;
+                enable_step = 4;
+            }
+            break;
+        case 4:
+            if (++enable_wait >= 4)
+            {
+                dm_motor.On(Gimbal::YAW_ID, BSP::Motor::DM::Model::MIT);
+                enable_wait = 0;
+                enable_step = 5;
+            }
+            break;
+        case 5:
+            if (++enable_wait >= 4)
+            {
+                enable_step = 0;
+                return true;
+            }
+            break;
+        default:
+            enable_step = 0;
+            break;
+    }
+    return false;
+}
+
 namespace Gimbal
 {
     GimbalConfig_t gimbal_cfg = {
-        0.6f,   // pitch_angle_max
-        -0.5f,  // pitch_angle_min
-        4.0f,   // yaw_vel_scale 
-        0.003f  // pitch_sensitivity
+        4.0f,    // yaw_vel_scale (rad/s per unit joystick)
+        1.2f,    // pitch_vel_scale (rad/s per unit joystick)
+        0.3f,    // pitch_angle_scale (deg per loop, for angle tracking)
+        1.15f    // gravity_comp
     };
 
 void Init()
@@ -41,15 +121,6 @@ void Init()
 void ParseCANFrame(const HAL::CAN::Frame &frame)
 {
     dm_motor.Parse(frame);
-
-    if (!encoder_initialized
-        && dm_motor.isConnected(PITCH_ID, 100)
-        && dm_motor.isConnected(YAW_ID, 100))
-    {
-        pitch_offset = dm_motor.getAngleRad(PITCH_ID);
-        target_pitch_rad = 0.0f;
-        encoder_initialized = true;
-    }
 }
 
 void StartUARTReceive()
@@ -60,18 +131,17 @@ void StartUARTReceive()
     __HAL_DMA_DISABLE_IT(uart3.get_handle()->hdmarx, DMA_IT_HT);
 }
 
+void StartIMUReceive()
+{
+    auto &uart1 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart1);
+    HAL::UART::Data data{imu_rx_buffer, IMU_BUF_SIZE};
+    uart1.receive_dma_idle(data);
+    __HAL_DMA_DISABLE_IT(uart1.get_handle()->hdmarx, DMA_IT_HT);
+}
+
 void EnableMotors()
 {
-    osDelay(100);
-    dm_motor.ClearErr(PITCH_ID, BSP::Motor::DM::Model::MIT);
-    osDelay(4);
-    dm_motor.ClearErr(YAW_ID, BSP::Motor::DM::Model::MIT);
-    osDelay(10);
-    dm_motor.On(PITCH_ID, BSP::Motor::DM::Model::MIT);
-    osDelay(4);
-    dm_motor.On(YAW_ID, BSP::Motor::DM::Model::MIT);
-    osDelay(10);
-    motors_enabled = true;
+    StartMotorEnable();
 }
 
 void DisableMotors()
@@ -79,61 +149,233 @@ void DisableMotors()
     dm_motor.Off(YAW_ID, BSP::Motor::DM::Model::MIT);
     dm_motor.Off(PITCH_ID, BSP::Motor::DM::Model::MIT);
     motors_enabled = false;
+    enable_step = 0;
+    encoder_initialized = false;
+    connect_wait_counter = 0;
+    yaw_adrc.reset();
+    pitch_adrc.reset();
+    yaw_angle_pid.reset();
+    yaw_runaway_counter = 0;
+    pitch_runaway_counter = 0;
+    yaw_runaway_flag = false;
+    pitch_runaway_flag = false;
 }
 
 void Update()
 {
-    // 1. 编码器未就绪时，不允许控制
-    if (!encoder_initialized)
+    // ========== Emergency Stop: Highest Priority ==========
+    if (dr16.get_s1() == BSP::REMOTE_CONTROL::RemoteController::DOWN &&
+        dr16.get_s2() == BSP::REMOTE_CONTROL::RemoteController::DOWN)
+    {
+        if (motors_enabled || enable_step != 0)
+        {
+            DisableMotors();
+        }
         return;
-
-    uint8_t s1 = dr16.get_s1();
-    uint8_t s2 = dr16.get_s2();
-
-    // 2. 【最高优先级】检测急停与唤醒
-    if (s1 == BSP::REMOTE_CONTROL::RemoteController::DOWN && 
-        s2 == BSP::REMOTE_CONTROL::RemoteController::DOWN)
-    {
-        if (motors_enabled) {
-            DisableMotors(); // 触发急停
-        }
-        return; // 急停状态下，不进行PID计算
-    }
-    else 
-    {
-        if (!motors_enabled) {
-            EnableMotors(); // 如果拨杆恢复正常，重新唤醒电机！
-        }
     }
 
-    // 3. 如果还没使能成功（比如正在执行 EnableMotors 的 delay），先跳过本次控制
+    if (enable_step != 0)
+    {
+        if (ProcessMotorEnable())
+            motors_enabled = true;
+    }
+
+    if (!encoder_initialized)
+    {
+        if (dm_motor.isConnected(PITCH_ID, 100)
+            && dm_motor.isConnected(YAW_ID, 100))
+        {
+            pitch_offset = dm_motor.getAngleRad(PITCH_ID);
+            target_pitch_deg = 0.0f;
+            if (imu_initialized)
+            {
+                target_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
+            }
+            encoder_initialized = true;
+            connect_wait_counter = 0;
+        }
+        else if (enable_step == 0)
+        {
+            if (motors_enabled && connect_wait_counter < CONNECT_WAIT_MAX)
+            {
+                connect_wait_counter++;
+            }
+            else
+            {
+                StartMotorEnable();
+                connect_wait_counter = 0;
+            }
+        }
+        return;
+    }
+
+    if (!motors_enabled && enable_step == 0)
+    {
+        StartMotorEnable();
+    }
+
     if (!motors_enabled)
         return;
 
-    float yaw_speed_target = dr16.get_right_x() * gimbal_cfg.yaw_vel_scale;
-    float yaw_speed = dm_motor.getVelocityRads(YAW_ID);
-    float yaw_torque = yaw_speed_pid.UpDate(yaw_speed_target, yaw_speed);
-    yaw_torque = Clamp(yaw_torque, -3.0f, 3.0f);
+    // ========== Remote Controller Safety Check ==========
+    if (!dr16.isConnected())
+    {
+        dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        yaw_adrc.reset();
+        pitch_adrc.reset();
+        yaw_angle_pid.reset();
+        return;
+    }
+
+    // ========== IMU Safety Check ==========
+    bool imu_ok = imu.isConnected() && imu_initialized;
+    if (!imu_ok)
+    {
+        dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        yaw_adrc.reset();
+        pitch_adrc.reset();
+        yaw_angle_pid.reset();
+        return;
+    }
+
+    // ========== Motor Safety Check ==========
+    bool yaw_motor_ok = dm_motor.isConnected(YAW_ID, 8);
+    bool pitch_motor_ok = dm_motor.isConnected(PITCH_ID, 6);
+
+    if (!yaw_motor_ok)
+    {
+        dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        yaw_adrc.reset();
+        yaw_angle_pid.reset();
+    }
+    if (!pitch_motor_ok)
+    {
+        dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        pitch_adrc.reset();
+    }
+    if (!yaw_motor_ok && !pitch_motor_ok)
+    {
+        return;
+    }
+
+    // ========== Target Generation ==========
+
+    // Yaw: joystick -> angle target accumulation -> angle PID -> velocity target
+    float raw_yaw_input = dr16.get_right_x();
+    if (std::fabs(raw_yaw_input) > 0.02f)
+    {
+        target_yaw_rad -= raw_yaw_input * gimbal_cfg.yaw_vel_scale * 0.001f;
+    }
+
+    float cur_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
+    float yaw_angle_err = NormalizeAngle(target_yaw_rad - cur_yaw_rad);
+    float yaw_vel_target = yaw_angle_pid.UpDate(yaw_angle_err, 0.0f);
+
+    // Pitch: joystick -> angle target (for limiting) + velocity target (for ADRC)
+    target_pitch_deg += dr16.get_right_y() * gimbal_cfg.pitch_angle_scale;
+    target_pitch_deg = Clamp(target_pitch_deg, PITCH_ANGLE_MIN_DEG, PITCH_ANGLE_MAX_DEG);
+    float pitch_vel_target = dr16.get_right_y() * gimbal_cfg.pitch_vel_scale;
+
+    // Pitch angle-based velocity limiting
+    float pitch_angle_deg = imu.GetAngle(1);
+    if (pitch_angle_deg >= PITCH_ANGLE_MAX_DEG && pitch_vel_target > 0.0f)
+        pitch_vel_target = 0.0f;
+    if (pitch_angle_deg <= PITCH_ANGLE_MIN_DEG && pitch_vel_target < 0.0f)
+        pitch_vel_target = 0.0f;
+
+    // ========== Yaw: ADRC Speed Loop ==========
+    float cur_yaw_vel = imu.GetGyro(2) * DEG_TO_RAD;
+    float yaw_torque = 0.0f;
+
+    if (yaw_motor_ok)
+    {
+        if (std::fabs(cur_yaw_vel) > YAW_VEL_LIMIT_RAD)
+        {
+            yaw_runaway_counter++;
+            if (yaw_runaway_counter >= RUNAWAY_COUNT_THRESHOLD)
+            {
+                yaw_runaway_flag = true;
+            }
+        }
+        else
+        {
+            if (yaw_runaway_counter > 0)
+                yaw_runaway_counter--;
+            if (std::fabs(cur_yaw_vel) < YAW_VEL_LIMIT_RAD * 0.5f)
+                yaw_runaway_flag = false;
+        }
+
+        if (!yaw_runaway_flag)
+        {
+            yaw_adrc.setTarget(yaw_vel_target);
+            yaw_torque = -yaw_adrc.update(cur_yaw_vel);
+            yaw_torque = Clamp(yaw_torque, -3.0f, 3.0f);
+        }
+        else
+        {
+            yaw_adrc.reset();
+        }
+    }
     dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, yaw_torque);
 
-    target_pitch_rad += dr16.get_right_y() * gimbal_cfg.pitch_sensitivity;
-    target_pitch_rad = Clamp(target_pitch_rad, gimbal_cfg.pitch_angle_min, gimbal_cfg.pitch_angle_max);
+    // ========== Pitch: ADRC Speed Loop + Gravity Feedforward ==========
+    float cur_pitch_vel = imu.GetGyro(1) * DEG_TO_RAD;
+    float pitch_torque = 0.0f;
 
-    float pitch_angle = dm_motor.getAngleRad(PITCH_ID) - pitch_offset;
-    float pitch_speed_target = pitch_angle_pid.UpDate(target_pitch_rad, pitch_angle);
-    float pitch_speed = dm_motor.getVelocityRads(PITCH_ID);
-    float pitch_torque = pitch_speed_pid.UpDate(pitch_speed_target, pitch_speed);
-    pitch_torque = Clamp(pitch_torque, -3.0f, 3.0f);
+    if (pitch_motor_ok)
+    {
+        if (std::fabs(cur_pitch_vel) > PITCH_VEL_LIMIT_RAD)
+        {
+            pitch_runaway_counter++;
+            if (pitch_runaway_counter >= RUNAWAY_COUNT_THRESHOLD)
+            {
+                pitch_runaway_flag = true;
+            }
+        }
+        else
+        {
+            if (pitch_runaway_counter > 0)
+                pitch_runaway_counter--;
+            if (std::fabs(cur_pitch_vel) < PITCH_VEL_LIMIT_RAD * 0.5f)
+                pitch_runaway_flag = false;
+        }
+
+        if (!pitch_runaway_flag)
+        {
+            pitch_adrc.setTarget(pitch_vel_target);
+            pitch_torque = pitch_adrc.update(cur_pitch_vel);
+            pitch_gravity_ff.GravityFeedforward(pitch_angle_deg);
+            pitch_torque += pitch_gravity_ff.getFeedforward();
+            pitch_torque = Clamp(pitch_torque, -3.0f, 3.0f);
+        }
+        else
+        {
+            pitch_adrc.reset();
+        }
+    }
     dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, pitch_torque);
 
-    gimbal_debug.yaw_speed_target = yaw_speed_target;
-    gimbal_debug.yaw_speed = yaw_speed;
+    // ========== Debug Data ==========
+    gimbal_debug.yaw_vel_target = yaw_vel_target;
+    gimbal_debug.yaw_vel_filtered = yaw_adrc.getTD_X1();
+    gimbal_debug.yaw_vel_feedback = cur_yaw_vel;
     gimbal_debug.yaw_torque = yaw_torque;
-    gimbal_debug.pitch_angle = pitch_angle;
-    gimbal_debug.pitch_speed = pitch_speed;
+    gimbal_debug.yaw_angle_target = target_yaw_rad;
+    gimbal_debug.yaw_angle_feedback = cur_yaw_rad;
+    gimbal_debug.yaw_angle_err = yaw_angle_err;
+    gimbal_debug.pitch_vel_target = pitch_vel_target;
+    gimbal_debug.pitch_vel_filtered = pitch_adrc.getTD_X1();
+    gimbal_debug.pitch_vel_feedback = cur_pitch_vel;
     gimbal_debug.pitch_torque = pitch_torque;
+    gimbal_debug.pitch_angle_deg = pitch_angle_deg;
+    gimbal_debug.gravity_ff = pitch_gravity_ff.getFeedforward();
     gimbal_debug.yaw_connected = dm_motor.isConnected(YAW_ID, 8) ? 1 : 0;
     gimbal_debug.pitch_connected = dm_motor.isConnected(PITCH_ID, 6) ? 1 : 0;
+    gimbal_debug.imu_connected = imu.isConnected() ? 1 : 0;
+    gimbal_debug.yaw_runaway = yaw_runaway_flag ? 1 : 0;
+    gimbal_debug.pitch_runaway = pitch_runaway_flag ? 1 : 0;
 }
 
 void SendToChassis()
@@ -201,6 +443,24 @@ void ProcessUARTRx(UART_HandleTypeDef *huart, uint16_t size)
         uart3.receive_dma_idle(data);
         __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
     }
+    else if (huart->Instance == USART1)
+    {
+        if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
+        {
+            __HAL_UART_CLEAR_OREFLAG(huart);
+        }
+
+        if (size <= IMU_BUF_SIZE)
+        {
+            imu.DataUpdate(imu_rx_buffer);
+            imu_initialized = true;
+        }
+
+        auto &uart1 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart1);
+        HAL::UART::Data data{imu_rx_buffer, IMU_BUF_SIZE};
+        uart1.receive_dma_idle(data);
+        __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+    }
 }
 
 void ProcessCANRx(CAN_HandleTypeDef *hcan)
@@ -263,6 +523,7 @@ extern "C" void Gimbal_ProcessCANFifo0(void *hcan)
     }
 }
 extern "C" void Gimbal_StartUARTReceive(void)    { Gimbal::StartUARTReceive(); }
+extern "C" void Gimbal_StartIMUReceive(void)     { Gimbal::StartIMUReceive(); }
 extern "C" void Gimbal_EnableMotors(void)        { Gimbal::EnableMotors(); }
 extern "C" void Gimbal_DisableMotors(void)       { Gimbal::DisableMotors(); }
 extern "C" void Gimbal_Update(void)              { Gimbal::Update(); }

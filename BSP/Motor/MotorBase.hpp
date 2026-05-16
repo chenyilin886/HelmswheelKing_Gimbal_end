@@ -6,6 +6,7 @@
 #include "state_watch.hpp"
 #include "buzzer_manager.hpp"
 #include "can_hal.hpp"
+#include <cmath>
 
 namespace BSP::Motor
 {

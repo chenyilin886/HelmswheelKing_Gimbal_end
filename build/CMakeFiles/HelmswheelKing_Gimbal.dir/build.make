@@ -127,10 +127,52 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.s"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\HelmswheelKing_Gimbal\Alg\PID\pid.cpp -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\PID\pid.cpp.s
 
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj: D:/Project/HelmswheelKing_Gimbal/Alg/ADRC/adrc.cpp
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\ADRC\adrc.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\ADRC\adrc.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\Alg\ADRC\adrc.cpp
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.i"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\HelmswheelKing_Gimbal\Alg\ADRC\adrc.cpp > CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\ADRC\adrc.cpp.i
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.s"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\HelmswheelKing_Gimbal\Alg\ADRC\adrc.cpp -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\ADRC\adrc.cpp.s
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj: D:/Project/HelmswheelKing_Gimbal/Alg/Filter/Filter.cpp
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Filter\Filter.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Filter\Filter.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\Alg\Filter\Filter.cpp
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.i"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\HelmswheelKing_Gimbal\Alg\Filter\Filter.cpp > CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Filter\Filter.cpp.i
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.s"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\HelmswheelKing_Gimbal\Alg\Filter\Filter.cpp -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Filter\Filter.cpp.s
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj: D:/Project/HelmswheelKing_Gimbal/Alg/Feedforward/Feedforward.cpp
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Feedforward\Feedforward.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Feedforward\Feedforward.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\Alg\Feedforward\Feedforward.cpp
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.i"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\HelmswheelKing_Gimbal\Alg\Feedforward\Feedforward.cpp > CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Feedforward\Feedforward.cpp.i
+
+CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.s"
+	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\HelmswheelKing_Gimbal\Alg\Feedforward\Feedforward.cpp -o CMakeFiles\HelmswheelKing_Gimbal.dir\Alg\Feedforward\Feedforward.cpp.s
+
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/CAN/interface/can_bus.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\interface\can_bus.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\interface\can_bus.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\CAN\interface\can_bus.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.i: cmake_force
@@ -144,7 +186,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.s: cmake_forc
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/CAN/impl/can_bus_impl.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\impl\can_bus_impl.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\impl\can_bus_impl.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\CAN\impl\can_bus_impl.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.i: cmake_force
@@ -158,7 +200,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.s: cmake_forc
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/CAN/impl/can_device_impl.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\impl\can_device_impl.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\CAN\impl\can_device_impl.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\CAN\impl\can_device_impl.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.i: cmake_force
@@ -172,7 +214,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.s: cmake_f
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/UART/interface/uart_bus.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\interface\uart_bus.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\interface\uart_bus.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\UART\interface\uart_bus.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.i: cmake_force
@@ -186,7 +228,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.s: cmake_fo
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/UART/impl/uart_bus_impl.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\impl\uart_bus_impl.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\impl\uart_bus_impl.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\UART\impl\uart_bus_impl.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.i: cmake_force
@@ -200,7 +242,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_bus_impl.cpp.s: cmake_fo
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj: D:/Project/HelmswheelKing_Gimbal/HAL/UART/impl/uart_device_impl.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\impl\uart_device_impl.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\HAL\UART\impl\uart_device_impl.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\HAL\UART\impl\uart_device_impl.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.i: cmake_force
@@ -214,7 +256,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/impl/uart_device_impl.cpp.s: cmake
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj: D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch/state_watch.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\BSP\Common\StateWatch\state_watch.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\BSP\Common\StateWatch\state_watch.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\BSP\Common\StateWatch\state_watch.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.i: cmake_force
@@ -228,7 +270,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/state_watch.cpp.s: cm
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj: D:/Project/HelmswheelKing_Gimbal/BSP/Common/StateWatch/buzzer_manager.cpp
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\BSP\Common\StateWatch\buzzer_manager.cpp.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\BSP\Common\StateWatch\buzzer_manager.cpp.obj -c D:\Project\HelmswheelKing_Gimbal\BSP\Common\StateWatch\buzzer_manager.cpp
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.i: cmake_force
@@ -242,7 +284,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.s:
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/main.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\main.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\main.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\main.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.i: cmake_force
@@ -256,7 +298,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/gpio.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\gpio.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\gpio.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\gpio.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.i: cmake_force
@@ -270,7 +312,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/gpio.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/freertos.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\freertos.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\freertos.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\freertos.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.i: cmake_force
@@ -284,7 +326,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/can.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\can.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\can.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\can.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.i: cmake_force
@@ -298,7 +340,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/dma.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\dma.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\dma.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\dma.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.i: cmake_force
@@ -312,7 +354,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/usart.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\usart.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\usart.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\usart.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.i: cmake_force
@@ -326,7 +368,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/usart.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/stm32f4xx_it.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_it.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_it.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\stm32f4xx_it.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
@@ -340,7 +382,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_hal_msp.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_hal_msp.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\stm32f4xx_hal_msp.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
@@ -354,7 +396,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/stm32f4xx_hal_timebase_tim.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\stm32f4xx_hal_timebase_tim.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.i: cmake_force
@@ -368,7 +410,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.s: cm
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i: cmake_force
@@ -382,7 +424,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
@@ -396,7 +438,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
@@ -410,7 +452,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
@@ -424,7 +466,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
@@ -438,7 +480,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
@@ -452,7 +494,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
@@ -466,7 +508,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
@@ -480,7 +522,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
@@ -494,7 +536,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
@@ -508,7 +550,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
@@ -522,7 +564,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
@@ -536,7 +578,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
@@ -550,7 +592,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
@@ -564,7 +606,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
@@ -578,7 +620,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
@@ -592,7 +634,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: D:/Project/HelmswheelKing_Gimbal/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj -c D:\Project\HelmswheelKing_Gimbal\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
@@ -606,7 +648,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/system_stm32f4xx.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\system_stm32f4xx.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\system_stm32f4xx.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\system_stm32f4xx.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
@@ -620,7 +662,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/system_stm32f4xx.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\croutine.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i: cmake_force
@@ -634,7 +676,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/cro
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i: cmake_force
@@ -648,7 +690,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/eve
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/list.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\list.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i: cmake_force
@@ -662,7 +704,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/lis
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/queue.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\queue.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i: cmake_force
@@ -676,7 +718,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/que
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i: cmake_force
@@ -690,7 +732,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/str
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\tasks.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i: cmake_force
@@ -704,7 +746,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tas
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/timers.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\timers.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i: cmake_force
@@ -718,7 +760,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/tim
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i: cmake_force
@@ -732,7 +774,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/CMS
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i: cmake_force
@@ -746,7 +788,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/por
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: D:/Project/HelmswheelKing_Gimbal/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj -c D:\Project\HelmswheelKing_Gimbal\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.i: cmake_force
@@ -760,7 +802,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Middlewares/Third_Party/FreeRTOS/Source/por
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/sysmem.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\sysmem.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\sysmem.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\sysmem.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.i: cmake_force
@@ -774,7 +816,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj: D:/Project/HelmswheelKing_Gimbal/Core/Src/syscalls.c
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.obj -MF CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\syscalls.c.obj.d -o CMakeFiles\HelmswheelKing_Gimbal.dir\Core\Src\syscalls.c.obj -c D:\Project\HelmswheelKing_Gimbal\Core\Src\syscalls.c
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.i: cmake_force
@@ -787,7 +829,7 @@ CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/syscalls.c.s: cmake_force
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj: CMakeFiles/HelmswheelKing_Gimbal.dir/flags.make
 CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj: D:/Project/HelmswheelKing_Gimbal/startup_stm32f407xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building ASM object CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building ASM object CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj"
 	"D:\Program Files\Arm\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\bin\arm-none-eabi-gcc.exe" $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\HelmswheelKing_Gimbal.dir\startup_stm32f407xx.s.obj -c D:\Project\HelmswheelKing_Gimbal\startup_stm32f407xx.s
 
 CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.i: cmake_force
@@ -804,6 +846,9 @@ HelmswheelKing_Gimbal_OBJECTS = \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj" \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/RemoteControl/DT7.cpp.obj" \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.obj" \
+"CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj" \
+"CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj" \
+"CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj" \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj" \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj" \
 "CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj" \
@@ -860,6 +905,9 @@ HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_cont
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/RemoteControl/DT7.cpp.obj
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.obj
+HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj
+HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj
+HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/interface/can_bus.cpp.obj
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_bus_impl.cpp.obj
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/CAN/impl/can_device_impl.cpp.obj
@@ -911,7 +959,7 @@ HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f40
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/build.make
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/objects1.rsp
 HelmswheelKing_Gimbal.elf: CMakeFiles/HelmswheelKing_Gimbal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX executable HelmswheelKing_Gimbal.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Project\HelmswheelKing_Gimbal\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Linking CXX executable HelmswheelKing_Gimbal.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HelmswheelKing_Gimbal.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

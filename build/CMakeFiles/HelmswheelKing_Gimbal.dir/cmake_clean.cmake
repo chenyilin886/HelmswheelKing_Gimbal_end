@@ -1,4 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj.d"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj.d"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Filter/Filter.cpp.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.obj"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/PID/pid.cpp.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/BSP/Common/StateWatch/buzzer_manager.cpp.obj"

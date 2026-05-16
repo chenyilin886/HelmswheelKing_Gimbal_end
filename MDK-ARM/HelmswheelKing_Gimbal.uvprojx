@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../APP/Gimbal;../Alg/Filter;../Alg/PID;../Alg/Feedforward;../HAL/CAN;../HAL/UART;../BSP/Common/FiniteStateMachine;../BSP/Common/StateWatch;../BSP/Motor/DM;../BSP/RemoteControl;../BSP/Motor;../User</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../APP/Gimbal;../Alg/Filter;../Alg/PID;../Alg/Feedforward;../HAL/CAN;../HAL/UART;../BSP/Common/FiniteStateMachine;../BSP/Common/StateWatch;../BSP/Motor/DM;../BSP/RemoteControl;../BSP/Motor;../User;..\Alg\ADRC;..\BSP\IMU\doc;..\BSP\IMU</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -632,6 +632,16 @@
               <FileType>8</FileType>
               <FilePath>..\BSP\RemoteControl\DT7.cpp</FilePath>
             </File>
+            <File>
+              <FileName>HI12_imu.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\IMU\HI12_imu.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>HI12Base.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\IMU\HI12Base.hpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -726,6 +736,11 @@
               <FileName>gimbal_to_chassis.hpp</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\gimbal_to_chassis.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>ladrc_improved.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Alg\ADRC\ladrc_improved.hpp</FilePath>
             </File>
           </Files>
         </Group>

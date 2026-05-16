@@ -12,6 +12,7 @@ extern "C"
     void Gimbal_Init(void);
     void Gimbal_InitCANBus(void);
     void Gimbal_StartUARTReceive(void);
+    void Gimbal_StartIMUReceive(void);
     void Gimbal_EnableMotors(void);
     void Gimbal_DisableMotors(void);
     void Gimbal_Update(void);
