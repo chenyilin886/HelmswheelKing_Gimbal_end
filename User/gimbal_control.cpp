@@ -2,18 +2,22 @@
 #include "gimbal_c_api.h"
 #include "cmsis_os.h"
 #include <cmath>
+#include "vofa.h"
 
 BSP::Motor::DM::J4310<2> dm_motor(0x00, {6, 8}, {4, 7});
 BSP::REMOTE_CONTROL::RemoteController dr16;
 Comm::GimbalToChassis g2c;
 BSP::IMU::HI12_float imu;
-  
-ALG::LADRC::LADRC yaw_adrc(200.0f, 10.0f, 0.0f, 35.0f, 22.0f, 0.001f, 3.5f);
-ALG::LADRC::LADRC pitch_adrc(50.0f, 8.0f, 0.0f, 35.0f, 20.0f, 0.001f, 3.5f);
+ALG::LADRC::LADRC pitch_adrc(200.0f, 6.0f, 0.0f, 35.0f, 20.0f, 0.001f, 3.5f);  
 
+ALG::LADRC::LADRC yaw_adrc(200.0f, 10.0f, 0.0f, 35.0f, 22.0f, 0.001f, 3.5f);
 ALG::PID::PID yaw_angle_pid(8.0f, 0.02f, 0.3f, 8.0f, 2.0f, 0.04f);
 
-Alg::Feedforward::Gravity pitch_gravity_ff(1.0f, 0.0f);
+GimbalMode gimbal_mode = GimbalMode::ANGLE;
+ALG::LADRC::LADRC yaw_vel_adrc(200.0f, 5.0f, 0.0f, 35.0f, 22.0f, 0.001f, 3.5f);
+ALG::LADRC::LADRC pitch_angle_adrc(200.0f, 4.0f, 0.0f, 35.0f, 20.0f, 0.001f, 3.5f);
+ALG::PID::PID pitch_angle_pid(4.5f, 0.0f, 1.2f, 5.0f, 1.5f, 0.05f);
+Alg::Feedforward::Gravity pitch_gravity_ff(1.1f, 0.0f);
 
 float target_yaw_rad = 0.0f;
 float target_pitch_deg = 0.0f;
@@ -155,6 +159,9 @@ void DisableMotors()
     yaw_adrc.reset();
     pitch_adrc.reset();
     yaw_angle_pid.reset();
+    pitch_angle_pid.reset();
+    yaw_vel_adrc.reset();
+    pitch_angle_adrc.reset();
     yaw_runaway_counter = 0;
     pitch_runaway_counter = 0;
     yaw_runaway_flag = false;
@@ -186,10 +193,15 @@ void Update()
             && dm_motor.isConnected(YAW_ID, 100))
         {
             pitch_offset = dm_motor.getAngleRad(PITCH_ID);
-            target_pitch_deg = 0.0f;
             if (imu_initialized)
             {
                 target_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
+                target_pitch_deg = imu.GetAngle(1);
+                target_pitch_deg = Clamp(target_pitch_deg, PITCH_ANGLE_MIN_DEG, PITCH_ANGLE_MAX_DEG);
+            }
+            else
+            {
+                target_pitch_deg = (PITCH_ANGLE_MIN_DEG + PITCH_ANGLE_MAX_DEG) / 2.0f;
             }
             encoder_initialized = true;
             connect_wait_counter = 0;
@@ -225,6 +237,9 @@ void Update()
         yaw_adrc.reset();
         pitch_adrc.reset();
         yaw_angle_pid.reset();
+        pitch_angle_pid.reset();
+        yaw_vel_adrc.reset();
+        pitch_angle_adrc.reset();
         return;
     }
 
@@ -237,6 +252,9 @@ void Update()
         yaw_adrc.reset();
         pitch_adrc.reset();
         yaw_angle_pid.reset();
+        pitch_angle_pid.reset();
+        yaw_vel_adrc.reset();
+        pitch_angle_adrc.reset();
         return;
     }
 
@@ -249,44 +267,112 @@ void Update()
         dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
         yaw_adrc.reset();
         yaw_angle_pid.reset();
+        yaw_vel_adrc.reset();
     }
     if (!pitch_motor_ok)
     {
         dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
         pitch_adrc.reset();
+        pitch_angle_pid.reset();
+        pitch_angle_adrc.reset();
     }
     if (!yaw_motor_ok && !pitch_motor_ok)
     {
         return;
     }
 
-    // ========== Target Generation ==========
+    // ========== IMU Data Sanity Check ==========
+    float cur_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
+    float cur_yaw_vel = imu.GetGyro(2) * DEG_TO_RAD;
+    float pitch_angle_deg = imu.GetAngle(1);
+    float cur_pitch_vel = imu.GetGyro(1) * DEG_TO_RAD;
 
-    // Yaw: joystick -> angle target accumulation -> angle PID -> velocity target
-    float raw_yaw_input = dr16.get_right_x();
-    if (std::fabs(raw_yaw_input) > 0.02f)
+    if (std::isnan(cur_yaw_rad) || std::isnan(cur_yaw_vel) ||
+        std::isnan(pitch_angle_deg) || std::isnan(cur_pitch_vel))
     {
-        target_yaw_rad -= raw_yaw_input * gimbal_cfg.yaw_vel_scale * 0.001f;
+        dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        yaw_adrc.reset();
+        pitch_adrc.reset();
+        yaw_angle_pid.reset();
+        pitch_angle_pid.reset();
+        yaw_vel_adrc.reset();
+        pitch_angle_adrc.reset();
+        return;
     }
 
-    float cur_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
-    float yaw_angle_err = NormalizeAngle(target_yaw_rad - cur_yaw_rad);
-    float yaw_vel_target = yaw_angle_pid.UpDate(yaw_angle_err, 0.0f);
+    // ========== Gimbal Mode Switching ==========
+    GimbalMode new_gimbal_mode;
+    uint8_t s1 = dr16.get_s1();
+    if (s1 == BSP::REMOTE_CONTROL::RemoteController::MIDDLE)
+        new_gimbal_mode = GimbalMode::VELOCITY;
+    else
+        new_gimbal_mode = GimbalMode::ANGLE;
 
-    // Pitch: joystick -> angle target (for limiting) + velocity target (for ADRC)
-    target_pitch_deg += dr16.get_right_y() * gimbal_cfg.pitch_angle_scale;
-    target_pitch_deg = Clamp(target_pitch_deg, PITCH_ANGLE_MIN_DEG, PITCH_ANGLE_MAX_DEG);
-    float pitch_vel_target = dr16.get_right_y() * gimbal_cfg.pitch_vel_scale;
+    if (new_gimbal_mode != gimbal_mode)
+    {
+        if (new_gimbal_mode == GimbalMode::VELOCITY)
+        {
+            yaw_vel_adrc.reset();
+            pitch_adrc.reset();
+        }
+        else
+        {
+            target_yaw_rad = imu.GetAngle(2) * DEG_TO_RAD;
+            yaw_angle_pid.reset();
+            yaw_adrc.reset();
+            target_pitch_deg = pitch_angle_deg;
+            pitch_angle_pid.reset();
+            pitch_angle_adrc.reset();
+        }
+        gimbal_mode = new_gimbal_mode;
+    }
 
-    // Pitch angle-based velocity limiting
-    float pitch_angle_deg = imu.GetAngle(1);
-    if (pitch_angle_deg >= PITCH_ANGLE_MAX_DEG && pitch_vel_target > 0.0f)
-        pitch_vel_target = 0.0f;
-    if (pitch_angle_deg <= PITCH_ANGLE_MIN_DEG && pitch_vel_target < 0.0f)
-        pitch_vel_target = 0.0f;
+    // ========== Target Generation ==========
+
+    float yaw_vel_target = 0.0f;
+    float yaw_angle_err = 0.0f;
+    float pitch_vel_target = 0.0f;
+    float pitch_angle_err = 0.0f;
+
+    if (gimbal_mode == GimbalMode::ANGLE)
+    {
+        // Yaw: joystick -> angle target -> angle PID -> velocity target
+        float raw_yaw_input = dr16.get_right_x();
+        if (std::fabs(raw_yaw_input) > 0.02f)
+        {
+            target_yaw_rad -= raw_yaw_input * gimbal_cfg.yaw_vel_scale * 0.001f;
+            target_yaw_rad = NormalizeAngle(target_yaw_rad);
+        }
+        yaw_angle_err = NormalizeAngle(target_yaw_rad - cur_yaw_rad);
+        yaw_vel_target = yaw_angle_pid.UpDate(yaw_angle_err, 0.0f);
+
+        // Pitch: joystick -> angle target -> angle PID -> velocity target
+        float raw_pitch_input = dr16.get_right_y();
+        if (std::fabs(raw_pitch_input) > 0.02f)
+        {
+            target_pitch_deg += raw_pitch_input * gimbal_cfg.pitch_angle_scale;
+            target_pitch_deg = Clamp(target_pitch_deg, PITCH_ANGLE_MIN_DEG, PITCH_ANGLE_MAX_DEG);
+        }
+        pitch_angle_err = (target_pitch_deg - pitch_angle_deg) * DEG_TO_RAD;
+        pitch_vel_target = pitch_angle_pid.UpDate(pitch_angle_err, 0.0f);
+    }
+    else
+    {
+        // Yaw: joystick -> velocity target (direct mapping)
+        yaw_vel_target = dr16.get_right_x() * gimbal_cfg.yaw_vel_scale;
+
+        // Pitch: joystick -> velocity target (direct mapping)
+        pitch_vel_target = dr16.get_right_y() * gimbal_cfg.pitch_vel_scale;
+
+        // Pitch angle-based velocity limiting (safety)
+        if (pitch_angle_deg >= PITCH_ANGLE_MAX_DEG && pitch_vel_target > 0.0f)
+            pitch_vel_target = 0.0f;
+        if (pitch_angle_deg <= PITCH_ANGLE_MIN_DEG && pitch_vel_target < 0.0f)
+            pitch_vel_target = 0.0f;
+    }
 
     // ========== Yaw: ADRC Speed Loop ==========
-    float cur_yaw_vel = imu.GetGyro(2) * DEG_TO_RAD;
     float yaw_torque = 0.0f;
 
     if (yaw_motor_ok)
@@ -309,19 +395,27 @@ void Update()
 
         if (!yaw_runaway_flag)
         {
-            yaw_adrc.setTarget(yaw_vel_target);
-            yaw_torque = -yaw_adrc.update(cur_yaw_vel);
+            if (gimbal_mode == GimbalMode::ANGLE)
+            {
+                yaw_adrc.setTarget(yaw_vel_target);
+                yaw_torque = -yaw_adrc.update(cur_yaw_vel);
+            }
+            else
+            {
+                yaw_vel_adrc.setTarget(yaw_vel_target);
+                yaw_torque = -yaw_vel_adrc.update(cur_yaw_vel);
+            }
             yaw_torque = Clamp(yaw_torque, -3.0f, 3.0f);
         }
         else
         {
             yaw_adrc.reset();
+            yaw_vel_adrc.reset();
         }
     }
     dm_motor.ctrl_Mit(YAW_ID, 0.0f, 0.0f, 0.0f, 0.0f, yaw_torque);
 
     // ========== Pitch: ADRC Speed Loop + Gravity Feedforward ==========
-    float cur_pitch_vel = imu.GetGyro(1) * DEG_TO_RAD;
     float pitch_torque = 0.0f;
 
     if (pitch_motor_ok)
@@ -344,8 +438,16 @@ void Update()
 
         if (!pitch_runaway_flag)
         {
-            pitch_adrc.setTarget(pitch_vel_target);
-            pitch_torque = pitch_adrc.update(cur_pitch_vel);
+            if (gimbal_mode == GimbalMode::ANGLE)
+            {
+                pitch_angle_adrc.setTarget(pitch_vel_target);
+                pitch_torque = pitch_angle_adrc.update(cur_pitch_vel);
+            }
+            else
+            {
+                pitch_adrc.setTarget(pitch_vel_target);
+                pitch_torque = pitch_adrc.update(cur_pitch_vel);
+            }
             pitch_gravity_ff.GravityFeedforward(pitch_angle_deg);
             pitch_torque += pitch_gravity_ff.getFeedforward();
             pitch_torque = Clamp(pitch_torque, -3.0f, 3.0f);
@@ -353,29 +455,36 @@ void Update()
         else
         {
             pitch_adrc.reset();
+            pitch_angle_adrc.reset();
         }
     }
     dm_motor.ctrl_Mit(PITCH_ID, 0.0f, 0.0f, 0.0f, 0.0f, pitch_torque);
 
     // ========== Debug Data ==========
     gimbal_debug.yaw_vel_target = yaw_vel_target;
-    gimbal_debug.yaw_vel_filtered = yaw_adrc.getTD_X1();
+    gimbal_debug.yaw_vel_filtered = (gimbal_mode == GimbalMode::ANGLE) ? yaw_adrc.getTD_X1() : yaw_vel_adrc.getTD_X1();
     gimbal_debug.yaw_vel_feedback = cur_yaw_vel;
     gimbal_debug.yaw_torque = yaw_torque;
     gimbal_debug.yaw_angle_target = target_yaw_rad;
     gimbal_debug.yaw_angle_feedback = cur_yaw_rad;
     gimbal_debug.yaw_angle_err = yaw_angle_err;
     gimbal_debug.pitch_vel_target = pitch_vel_target;
-    gimbal_debug.pitch_vel_filtered = pitch_adrc.getTD_X1();
+    gimbal_debug.pitch_vel_filtered = (gimbal_mode == GimbalMode::ANGLE) ? pitch_angle_adrc.getTD_X1() : pitch_adrc.getTD_X1();
     gimbal_debug.pitch_vel_feedback = cur_pitch_vel;
     gimbal_debug.pitch_torque = pitch_torque;
     gimbal_debug.pitch_angle_deg = pitch_angle_deg;
+    gimbal_debug.pitch_angle_target = target_pitch_deg;
+    gimbal_debug.pitch_angle_err = pitch_angle_err;
     gimbal_debug.gravity_ff = pitch_gravity_ff.getFeedforward();
     gimbal_debug.yaw_connected = dm_motor.isConnected(YAW_ID, 8) ? 1 : 0;
     gimbal_debug.pitch_connected = dm_motor.isConnected(PITCH_ID, 6) ? 1 : 0;
     gimbal_debug.imu_connected = imu.isConnected() ? 1 : 0;
     gimbal_debug.yaw_runaway = yaw_runaway_flag ? 1 : 0;
     gimbal_debug.pitch_runaway = pitch_runaway_flag ? 1 : 0;
+    gimbal_debug.gimbal_mode = (gimbal_mode == GimbalMode::ANGLE) ? 0 : 1;
+
+    vofa_send(pitch_angle_deg, target_pitch_deg, pitch_vel_target, 
+              cur_pitch_vel, pitch_torque, gimbal_debug.gravity_ff);
 }
 
 void SendToChassis()

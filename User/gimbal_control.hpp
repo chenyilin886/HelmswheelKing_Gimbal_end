@@ -22,6 +22,13 @@ extern ALG::LADRC::LADRC yaw_adrc;
 extern ALG::LADRC::LADRC pitch_adrc;
 
 extern ALG::PID::PID yaw_angle_pid;
+extern ALG::PID::PID pitch_angle_pid;
+
+enum class GimbalMode { ANGLE, VELOCITY };
+
+extern GimbalMode gimbal_mode;
+extern ALG::LADRC::LADRC yaw_vel_adrc;
+extern ALG::LADRC::LADRC pitch_angle_adrc;
 
 extern Alg::Feedforward::Gravity pitch_gravity_ff;
 
@@ -42,12 +49,15 @@ struct GimbalDebugData
     float pitch_vel_feedback;
     float pitch_torque;
     float pitch_angle_deg;
+    float pitch_angle_target;
+    float pitch_angle_err;
     float gravity_ff;
     uint8_t yaw_connected;
     uint8_t pitch_connected;
     uint8_t imu_connected;
     uint8_t yaw_runaway;
     uint8_t pitch_runaway;
+    uint8_t gimbal_mode;
 };
 
 extern GimbalDebugData gimbal_debug;
@@ -60,8 +70,8 @@ namespace Gimbal
     constexpr uint16_t IMU_BUF_SIZE = 82;
     constexpr int16_t YAW_INIT_ANGLE_DEG = 77;
 
-    constexpr float PITCH_ANGLE_MAX_DEG = 30.0f;
-    constexpr float PITCH_ANGLE_MIN_DEG = -30.0f;
+    constexpr float PITCH_ANGLE_MAX_DEG = 20.0f;
+    constexpr float PITCH_ANGLE_MIN_DEG = -20.0f;
     constexpr float DEG_TO_RAD = 0.0174532925f;
 
     constexpr float YAW_VEL_LIMIT_RAD = 5.0f;

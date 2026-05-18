@@ -169,6 +169,15 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+#include "vofa.h"
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART6)
+    {
+        vofa_tx_complete();
+    }
+}
 
 /* USER CODE END 4 */
 
