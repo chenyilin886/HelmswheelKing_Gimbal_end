@@ -40,6 +40,8 @@ private:
 class LADRC
 {
 public:
+    LADRC() : td_(), kp_(0), kd_(0), wc_(0), b0_(1.0f), h_(0.001f), max_(0),
+          z1_(0), z2_(0), u_(0), target_(0) {}
     LADRC(float r, float kp, float kd, float wc, float b0, float h, float max)
         : td_(r, h), kp_(kp), kd_(kd), wc_(wc), b0_(b0), h_(h), max_(max),
           z1_(0), z2_(0), u_(0), target_(0) {}
@@ -86,6 +88,8 @@ public:
         wc_ = wc;
         b0_ = b0;
     }
+
+    void setMax(float max) { max_ = max; }
 
 private:
     void esoUpdate(float feedback)

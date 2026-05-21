@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_ASM
   "D:/Project/HelmswheelKing_Gimbal/startup_stm32f407xx.s" "D:/Project/HelmswheelKing_Gimbal/build/CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj"
   )
-set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
@@ -39,6 +38,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/Project/HelmswheelKing_Gimbal/Alg/Feedforward"
   "D:/Project/HelmswheelKing_Gimbal/User"
   "D:/Project/HelmswheelKing_Gimbal/Core/Inc"
+  "D:/Project/HelmswheelKing_Gimbal/APP"
   "D:/Project/HelmswheelKing_Gimbal/cmake/stm32cubemx/../../Core/Inc"
   "D:/Project/HelmswheelKing_Gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
   "D:/Project/HelmswheelKing_Gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
@@ -51,6 +51,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/Project/HelmswheelKing_Gimbal/APP/vofa.c" "CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.obj.d"
   "D:/Project/HelmswheelKing_Gimbal/Core/Src/can.c" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/can.c.obj.d"
   "D:/Project/HelmswheelKing_Gimbal/Core/Src/dma.c" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/dma.c.obj.d"
   "D:/Project/HelmswheelKing_Gimbal/Core/Src/freertos.c" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/Core/Src/freertos.c.obj.d"
@@ -105,6 +106,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Project/HelmswheelKing_Gimbal/HAL/UART/interface/uart_bus.cpp" "CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/HAL/UART/interface/uart_bus.cpp.obj.d"
   "D:/Project/HelmswheelKing_Gimbal/User/gimbal_control.cpp" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_control.cpp.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_control.cpp.obj.d"
   "D:/Project/HelmswheelKing_Gimbal/User/gimbal_to_chassis.cpp" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj.d"
+  "D:/Project/HelmswheelKing_Gimbal/User/vision.cpp" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.obj" "gcc" "CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -18,10 +18,12 @@ UartBus &UartBus::instance()
 
 UartBus::UartBus()
     : uart1_(&huart1),
-      uart3_(&huart3)
+      uart3_(&huart3),
+      uart6_(&huart6)
 {
     register_device(UartDeviceId::HAL_Uart1, &uart1_);
     register_device(UartDeviceId::HAL_Uart3, &uart3_);
+    register_device(UartDeviceId::HAL_Uart6, &uart6_);
 }
 
 void UartBus::init()

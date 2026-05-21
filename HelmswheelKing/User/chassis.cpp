@@ -38,7 +38,7 @@ Chassis::Chassis()
                  (float[]){5.0f*M_PI_F/4.0f, 7.0f*M_PI_F/4.0f, M_PI_F/4.0f, 3.0f*M_PI_F/4.0f}, 
                  (float[]){4.804619f - P4, 1.424031f - P3, 4.734439f + P3, 4.575001f + P4}),
       target_vx_(0.0f), target_vy_(0.0f), target_vw_(0.0f),
-      debug_phase_{-2.1f, 0.1f, 1.85f, 0.0f},
+      debug_phase_{-2.1f, 0.1f, -1.4f, 0.0f},
       debug_linear_gain_(0.5f), debug_angular_gain_(1.5f)
 {
     // 构造函数体留空

@@ -59,7 +59,7 @@ osThreadId_t GimbalTaskHandle;
 const osThreadAttr_t GimbalTask_attributes = {
   .name = "GimbalTask",
   .stack_size = 2048 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 
 /* Private function prototypes -----------------------------------------------*/

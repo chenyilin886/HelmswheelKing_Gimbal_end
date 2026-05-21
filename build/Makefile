@@ -128,6 +128,30 @@ HelmswheelKing_Gimbal/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/build
 .PHONY : HelmswheelKing_Gimbal/fast
 
+APP/vofa.obj: APP/vofa.c.obj
+.PHONY : APP/vofa.obj
+
+# target to build an object file
+APP/vofa.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.obj
+.PHONY : APP/vofa.c.obj
+
+APP/vofa.i: APP/vofa.c.i
+.PHONY : APP/vofa.i
+
+# target to preprocess a source file
+APP/vofa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.i
+.PHONY : APP/vofa.c.i
+
+APP/vofa.s: APP/vofa.c.s
+.PHONY : APP/vofa.s
+
+# target to generate assembly for a file
+APP/vofa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.s
+.PHONY : APP/vofa.c.s
+
 Alg/ADRC/adrc.obj: Alg/ADRC/adrc.cpp.obj
 .PHONY : Alg/ADRC/adrc.obj
 
@@ -1424,6 +1448,30 @@ User/gimbal_to_chassis.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.s
 .PHONY : User/gimbal_to_chassis.cpp.s
 
+User/vision.obj: User/vision.cpp.obj
+.PHONY : User/vision.obj
+
+# target to build an object file
+User/vision.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.obj
+.PHONY : User/vision.cpp.obj
+
+User/vision.i: User/vision.cpp.i
+.PHONY : User/vision.i
+
+# target to preprocess a source file
+User/vision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.i
+.PHONY : User/vision.cpp.i
+
+User/vision.s: User/vision.cpp.s
+.PHONY : User/vision.s
+
+# target to generate assembly for a file
+User/vision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\HelmswheelKing_Gimbal.dir\build.make CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.s
+.PHONY : User/vision.cpp.s
+
 startup_stm32f407xx.obj: startup_stm32f407xx.s.obj
 .PHONY : startup_stm32f407xx.obj
 
@@ -1441,6 +1489,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... HelmswheelKing_Gimbal
+	@echo ... APP/vofa.obj
+	@echo ... APP/vofa.i
+	@echo ... APP/vofa.s
 	@echo ... Alg/ADRC/adrc.obj
 	@echo ... Alg/ADRC/adrc.i
 	@echo ... Alg/ADRC/adrc.s
@@ -1603,6 +1654,9 @@ help:
 	@echo ... User/gimbal_to_chassis.obj
 	@echo ... User/gimbal_to_chassis.i
 	@echo ... User/gimbal_to_chassis.s
+	@echo ... User/vision.obj
+	@echo ... User/vision.i
+	@echo ... User/vision.s
 	@echo ... startup_stm32f407xx.obj
 .PHONY : help
 

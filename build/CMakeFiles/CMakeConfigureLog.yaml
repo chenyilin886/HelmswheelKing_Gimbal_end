@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:207 (message)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       The target system is: Generic -  - arm
       The host system is: Windows - 10.0.26200 - AMD64
@@ -13,7 +13,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeMinGWFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Path to a program."
@@ -139,7 +139,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -288,7 +288,7 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -352,11 +352,11 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc.exe 
-      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3
+      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3
       Id flags:  
       
       The output was:
@@ -396,7 +396,7 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -460,11 +460,11 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc.exe 
-      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3
+      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3
       Id flags: -c 
       
       The output was:
@@ -482,7 +482,7 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:58 (__resolve_tool_path)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -580,7 +580,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -679,7 +679,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -778,7 +778,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -877,7 +877,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -976,7 +976,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -1075,7 +1075,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -1174,7 +1174,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -1414,7 +1414,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -1513,7 +1513,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -1815,7 +1815,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -2222,7 +2222,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -2629,7 +2629,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -2778,7 +2778,7 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -2842,11 +2842,11 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-g++.exe 
-      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
       Id flags:  
       
       The output was:
@@ -2886,7 +2886,7 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -2950,11 +2950,11 @@ events:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-g++.exe 
-      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Build flags: -mcpu=cortex-m4;-mfpu=fpv4-sp-d16;-mfloat-abi=hard;-Wall;-Wextra;-Wpedantic;-fdata-sections;-ffunction-sections;-O0;-g3;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
       Id flags: -c 
       
       The output was:
@@ -2971,7 +2971,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -3378,7 +3378,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -3785,7 +3785,7 @@ events:
     backtrace:
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:64 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -3929,626 +3929,268 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1290 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
       - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
-      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
       arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
       Copyright (C) 2025 Free Software Foundation, Inc.
       This is free software; see the source for copying conditions.  There is NO
       warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       
   -
-    kind: "find-v1"
+    kind: "message-v1"
     backtrace:
-      - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
-      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
-    mode: "program"
-    variable: "CMAKE_ASM_COMPILER_AR"
-    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "arm-none-eabi-gcc-ar-"
-      - "arm-none-eabi-gcc-ar-"
-      - "arm-none-eabi-gcc-ar"
-      - "arm-none-eabi-gcc-ar"
-    candidate_directories:
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/"
-      - "C:/Windows/System32/cmd.exe/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files/dotnet/"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/mingw64/bin/"
-      - "D:/msys2/ucrt64/bin/"
-      - "C:/Windows/System32/"
-      - "D:/Program Files/CMake/bin/"
-      - "D:/mingw64/bin/"
-      - "C:/xpack-openocd-0.12.0-7/bin/"
-      - "D:/CodeTools/msys64/usr/bin/"
-      - "D:/CodeTools/msys64/mingw64/bin/"
-      - "D:/CodeTools/msys64/ucrt64/bin/"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/"
-      - "D:/nodejs/"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/"
-      - "D:/Program Files/Git/cmd/"
-      - "C:/Users/chen'yi'lin/.local/bin/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/"
-    searched_directories:
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-.com"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-.com"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-.exe"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ar-"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-.com"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ar-"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-.com"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ar-"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-.com"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ar-"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ar-"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ar-"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-.com"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-.exe"
-      - "D:/nodejs/arm-none-eabi-gcc-ar-"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-.com"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ar-"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-.com"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-.exe"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ar-"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-.com"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ar-"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar.com"
-    found: "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ar.exe"
-    search_context:
-      ENV{PATH}:
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\tools\\\\trae-gopls\\\\current"
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\sdks\\\\workspaces\\\\cd7b47a7\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\tools\\trae-gopls\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\sdks\\workspaces\\cd7b47a7\\versions\\node\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\windows\\system32\\cmd.exe"
-        - "C:\\windows"
-        - "C:\\windows\\System32\\Wbem"
-        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files\\dotnet\\"
-        - "D:\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\mingw64\\bin"
-        - "D:\\msys2\\ucrt64\\bin"
-        - "C:\\Windows\\System32"
-        - "D:\\Program Files\\CMake\\bin"
-        - "D:\\Program Files\\Arm\\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\\bin"
-        - "D:\\mingw64\\bin"
-        - "C:\\xpack-openocd-0.12.0-7\\bin"
-        - "D:\\CodeTools\\msys64\\usr\\bin"
-        - "D:\\CodeTools\\msys64\\mingw64\\bin"
-        - "D:\\CodeTools\\msys64\\ucrt64\\bin"
-        - "D:\\CodeTools\\Compiler\\arm-none-eabi-gcc\\bin"
-        - "D:\\nodejs\\"
-        - "D:\\xpack-openocd-0.12.0-7-win32-x64\\xpack-openocd-0.12.0-7\\bin"
-        - "D:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\chen'yi'lin\\.local\\bin"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "D:\\msys2\\ucrt64\\bin"
-        - "D:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Antigravity\\bin"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Roaming\\npm"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
   -
-    kind: "find-v1"
+    kind: "message-v1"
     backtrace:
-      - "D:/Program Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
-      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
-    mode: "program"
-    variable: "CMAKE_ASM_COMPILER_RANLIB"
-    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "arm-none-eabi-gcc-ranlib-"
-      - "arm-none-eabi-gcc-ranlib-"
-      - "arm-none-eabi-gcc-ranlib"
-      - "arm-none-eabi-gcc-ranlib"
-    candidate_directories:
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/"
-      - "C:/Windows/System32/cmd.exe/"
-      - "C:/Windows/"
-      - "C:/Windows/System32/wbem/"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
-      - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files/dotnet/"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/mingw64/bin/"
-      - "D:/msys2/ucrt64/bin/"
-      - "C:/Windows/System32/"
-      - "D:/Program Files/CMake/bin/"
-      - "D:/mingw64/bin/"
-      - "C:/xpack-openocd-0.12.0-7/bin/"
-      - "D:/CodeTools/msys64/usr/bin/"
-      - "D:/CodeTools/msys64/mingw64/bin/"
-      - "D:/CodeTools/msys64/ucrt64/bin/"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/"
-      - "D:/nodejs/"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/"
-      - "D:/Program Files/Git/cmd/"
-      - "C:/Users/chen'yi'lin/.local/bin/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/"
-    searched_directories:
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/tools/trae-gopls/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/workspaces/cd7b47a7/versions/node/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.trae-cn/sdks/versions/node/current/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/cmd.exe/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/wbem/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/OpenSSH/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/arm-none-eabi-gcc-ranlib-"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Program Files/dotnet/arm-none-eabi-gcc-ranlib-"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Windows Kits/10/Windows Performance Toolkit/arm-none-eabi-gcc-ranlib-"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/msys2/ucrt64/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Windows/System32/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/CMake/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/usr/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/mingw64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/msys64/ucrt64/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/CodeTools/Compiler/arm-none-eabi-gcc/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/nodejs/arm-none-eabi-gcc-ranlib-"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/xpack-openocd-0.12.0-7-win32-x64/xpack-openocd-0.12.0-7/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Program Files/Git/cmd/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/.local/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/Scripts/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Python312/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Python/Launcher/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Microsoft/WindowsApps/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Local/Programs/Microsoft VS Code/bin/arm-none-eabi-gcc-ranlib-"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-.com"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-.exe"
-      - "D:/Users/chen'yi'lin/AppData/Local/Programs/Antigravity/bin/arm-none-eabi-gcc-ranlib-"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-.com"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-.exe"
-      - "C:/Users/chen'yi'lin/AppData/Roaming/npm/arm-none-eabi-gcc-ranlib-"
-      - "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.com"
-    found: "D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc-ranlib.exe"
-    search_context:
-      ENV{PATH}:
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\tools\\\\trae-gopls\\\\current"
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\sdks\\\\workspaces\\\\cd7b47a7\\\\versions\\\\node\\\\current"
-        - "c:\\\\Users\\\\chen'yi'lin\\\\.trae-cn\\\\sdks\\\\versions\\\\node\\\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\tools\\trae-gopls\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\sdks\\workspaces\\cd7b47a7\\versions\\node\\current"
-        - "c:\\Users\\chen'yi'lin\\.trae-cn\\sdks\\versions\\node\\current"
-        - "C:\\windows\\system32\\cmd.exe"
-        - "C:\\windows"
-        - "C:\\windows\\System32\\Wbem"
-        - "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\windows\\System32\\OpenSSH\\"
-        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files\\dotnet\\"
-        - "D:\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\mingw64\\bin"
-        - "D:\\msys2\\ucrt64\\bin"
-        - "C:\\Windows\\System32"
-        - "D:\\Program Files\\CMake\\bin"
-        - "D:\\Program Files\\Arm\\GNU Toolchain mingw-w64-x86_64-arm-none-eabi\\bin"
-        - "D:\\mingw64\\bin"
-        - "C:\\xpack-openocd-0.12.0-7\\bin"
-        - "D:\\CodeTools\\msys64\\usr\\bin"
-        - "D:\\CodeTools\\msys64\\mingw64\\bin"
-        - "D:\\CodeTools\\msys64\\ucrt64\\bin"
-        - "D:\\CodeTools\\Compiler\\arm-none-eabi-gcc\\bin"
-        - "D:\\nodejs\\"
-        - "D:\\xpack-openocd-0.12.0-7-win32-x64\\xpack-openocd-0.12.0-7\\bin"
-        - "D:\\Program Files\\Git\\cmd"
-        - "C:\\Users\\chen'yi'lin\\.local\\bin"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Python312\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Python\\Launcher\\"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Microsoft\\WindowsApps"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "D:\\msys2\\ucrt64\\bin"
-        - "D:\\Users\\chen'yi'lin\\AppData\\Local\\Programs\\Antigravity\\bin"
-        - "C:\\Users\\chen'yi'lin\\AppData\\Roaming\\npm"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is OrangeC using "--version" did not match "occ \\(OrangeC\\) Version":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-V'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is IntelLLVM using "--version" did not match "(Intel[^
+      ]+oneAPI)":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-V'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-qversion'; did you mean '--version'?
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-?'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+      arm-none-eabi-gcc.exe: error: missing argument to '-h'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is TIClang using "--version" did not match "(TI (.*) Clang Compiler)":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is Diab using "-V" did not match "Wind River Systems":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-V'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)|(Arm Compiler)":
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+      Using built-in specs.
+      COLLECT_GCC=D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+      COLLECT_LTO_WRAPPER=D:/Program\\ Files/Arm/GNU\\ Toolchain\\ mingw-w64-x86_64-arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/15.2.1/lto-wrapper.exe
+      Target: arm-none-eabi
+      Configured with: /data/jenkins/workspace/GNU-toolchain/arm-15-5/src/gcc/configure --target=arm-none-eabi --prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/install --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --disable-shared --disable-nls --disable-threads --enable-checking=release --enable-languages=c,c++,fortran --with-newlib --with-gnu-as --with-headers=yes --with-gnu-ld --with-native-system-header-dir=/include --with-sysroot=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/install/arm-none-eabi --with-bugurl=https://gitlab.arm.com/tooling/gnu-devtools-for-arm/-/issues/ --with-multilib-list=aprofile,rmprofile --with-libiconv-prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-libiconv-prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --enable-mingw-wildcard --host=x86_64-w64-mingw32 --with-pkgversion='Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)'
+      Thread model: single
+      Supported LTO compression algorithms: zlib
+      gcc version 15.2.1 20251203 (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-version'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+      arm-none-eabi-gcc.exe: error: unrecognized command-line option '-V'
+      arm-none-eabi-gcc.exe: fatal error: no input files
+      compilation terminated.
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is Tasking using "--version" did not match "TASKING":
+      arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+      Copyright (C) 2025 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1303 (message)"
+      - "D:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:33 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is Renesas using "-v" did not match "(RX Family C/C\\+\\+ Compiler)|(RL78 Family Compiler)|(RH850 Family Compiler)":
+      Using built-in specs.
+      COLLECT_GCC=D:/Program Files/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc.exe
+      COLLECT_LTO_WRAPPER=D:/Program\\ Files/Arm/GNU\\ Toolchain\\ mingw-w64-x86_64-arm-none-eabi/bin/../libexec/gcc/arm-none-eabi/15.2.1/lto-wrapper.exe
+      Target: arm-none-eabi
+      Configured with: /data/jenkins/workspace/GNU-toolchain/arm-15-5/src/gcc/configure --target=arm-none-eabi --prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/install --with-gmp=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-mpfr=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-mpc=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-isl=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --disable-shared --disable-nls --disable-threads --enable-checking=release --enable-languages=c,c++,fortran --with-newlib --with-gnu-as --with-headers=yes --with-gnu-ld --with-native-system-header-dir=/include --with-sysroot=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/install/arm-none-eabi --with-bugurl=https://gitlab.arm.com/tooling/gnu-devtools-for-arm/-/issues/ --with-multilib-list=aprofile,rmprofile --with-libiconv-prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --with-libiconv-prefix=/data/jenkins/workspace/GNU-toolchain/arm-15-5/build-mingw-arm-none-eabi/host-tools --enable-mingw-wildcard --host=x86_64-w64-mingw32 --with-pkgversion='Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)'
+      Thread model: single
+      Supported LTO compression algorithms: zlib
+      gcc version 15.2.1 20251203 (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 
 ...
 
 ---
@@ -4557,7 +4199,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:207 (message)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       The target system is: Generic -  - arm
       The host system is: Windows - 10.0.26200 - AMD64
@@ -4566,7 +4208,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -4658,7 +4300,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -4716,7 +4358,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: D:/STM32_Tools/gcc/bin/arm-none-eabi-gcc.exe 
@@ -4760,7 +4402,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -4818,7 +4460,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: D:/STM32_Tools/gcc/bin/arm-none-eabi-gcc.exe 
@@ -4840,7 +4482,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:58 (__resolve_tool_path)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -4929,7 +4571,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -5019,7 +4661,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -5109,7 +4751,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -5199,7 +4841,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -5289,7 +4931,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -5379,7 +5021,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -5469,7 +5111,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -5682,7 +5324,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -5772,7 +5414,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -6047,7 +5689,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -6418,7 +6060,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -6789,7 +6431,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -6881,7 +6523,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -6939,7 +6581,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: D:/STM32_Tools/gcc/bin/arm-none-eabi-g++.exe 
@@ -6983,7 +6625,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -7041,7 +6683,7 @@ events:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: D:/STM32_Tools/gcc/bin/arm-none-eabi-g++.exe 
@@ -7062,7 +6704,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -7433,7 +7075,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -7804,7 +7446,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:64 (_cmake_find_compiler_path)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_WITH_PATH"
     description: "Path to a program."
@@ -7893,7 +7535,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1290 (message)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
       arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
@@ -7906,7 +7548,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -8184,7 +7826,7 @@ events:
     backtrace:
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "D:/STM32_Tools/cmake/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:31 (enable_language)"
+      - "CMakeLists.txt:33 (enable_language)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"

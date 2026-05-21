@@ -296,6 +296,7 @@ namespace Alg::Feedforward
              * @param k_gravity_ 重力补偿系数
              * @param phi_ 相位补偿（单位 度）补偿到水平，水平为0点
              */
+            Gravity() : k_gravity(0), phi(0), feedforward(0) {}
             Gravity(float k_gravity_, float phi_)
             {
                 k_gravity = k_gravity_;
@@ -322,6 +323,9 @@ namespace Alg::Feedforward
             {
                 return feedforward;
             }
+
+            void setK(float k) { k_gravity = k; }
+            void setPhi(float p) { phi = p; }
 
         private:
             float k_gravity;    // 重力系数

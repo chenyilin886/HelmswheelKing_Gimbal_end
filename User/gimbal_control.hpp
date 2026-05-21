@@ -3,37 +3,10 @@
 
 #pragma once
 
-#include "DmMotor.hpp"
-#include "DT7.hpp"
-#include "ladrc_improved.hpp"
-#include "Feedforward.hpp"
-#include "pid.hpp"
-#include "can_hal.hpp"
-#include "uart_hal.hpp"
-#include "gimbal_to_chassis.hpp"
-#include "HI12_imu.hpp"
-
-extern BSP::Motor::DM::J4310<2> dm_motor;
-extern BSP::REMOTE_CONTROL::RemoteController dr16;
-extern Comm::GimbalToChassis g2c;
-extern BSP::IMU::HI12_float imu;
-
-extern ALG::LADRC::LADRC yaw_adrc;
-extern ALG::LADRC::LADRC pitch_adrc;
-
-extern ALG::PID::PID yaw_angle_pid;
-extern ALG::PID::PID pitch_angle_pid;
-
-enum class GimbalMode { ANGLE, VELOCITY };
-
-extern GimbalMode gimbal_mode;
-extern ALG::LADRC::LADRC yaw_vel_adrc;
-extern ALG::LADRC::LADRC pitch_angle_adrc;
-
-extern Alg::Feedforward::Gravity pitch_gravity_ff;
-
-extern float target_yaw_rad;
-extern float target_pitch_deg;
+#include "gimbal_axis.hpp"
+#include "gimbal_target.hpp"
+#include "gimbal_driver.hpp"
+#include "vision.hpp"
 
 struct GimbalDebugData
 {
@@ -60,47 +33,39 @@ struct GimbalDebugData
     uint8_t gimbal_mode;
 };
 
+struct GimbalTuneData
+{
+    AxisTuneParams yaw;
+    AxisTuneParams pitch;
+    float yaw_vel_scale;
+    float pitch_vel_scale;
+    float pitch_angle_scale;
+};
+
 extern GimbalDebugData gimbal_debug;
+extern GimbalTuneData gimbal_tune;
+extern Comm::Vision::DebugData vision_debug;
 
 namespace Gimbal
 {
-    constexpr uint8_t PITCH_ID = 1;
-    constexpr uint8_t YAW_ID = 2;
-    constexpr uint16_t DBUS_BUF_SIZE = 18;
-    constexpr uint16_t IMU_BUF_SIZE = 82;
-    constexpr int16_t YAW_INIT_ANGLE_DEG = 77;
-
+    constexpr float DEG_TO_RAD = 0.0174532925f;
     constexpr float PITCH_ANGLE_MAX_DEG = 20.0f;
     constexpr float PITCH_ANGLE_MIN_DEG = -20.0f;
-    constexpr float DEG_TO_RAD = 0.0174532925f;
-
-    constexpr float YAW_VEL_LIMIT_RAD = 5.0f;
-    constexpr float PITCH_VEL_LIMIT_RAD = 4.0f;
-    constexpr uint8_t RUNAWAY_COUNT_THRESHOLD = 10;
-
-    float ZeroCrossingProcessing(float expectations, float feedback, float maxpos);
-    float CalcuGimbalToChassisAngle();
-
-    struct GimbalConfig_t {
-        float yaw_vel_scale;
-        float pitch_vel_scale;
-        float pitch_angle_scale;
-        float gravity_comp;
-    };
-
-    extern GimbalConfig_t gimbal_cfg;
 
     void Init();
     void ParseCANFrame(const HAL::CAN::Frame &frame);
     void StartUARTReceive();
     void StartIMUReceive();
+    void StartVisionReceive();
     void EnableMotors();
     void DisableMotors();
     void Update();
     void SendToChassis();
     void ProcessUARTRx(UART_HandleTypeDef *huart, uint16_t size);
+    void ProcessUARTRxCplt(UART_HandleTypeDef *huart);
     void ProcessCANRx(CAN_HandleTypeDef *hcan);
     void ProcessCANFifo1(CAN_HandleTypeDef *hcan);
+    float CalcuGimbalToChassisAngle();
 }
 
 #endif

@@ -11,6 +11,8 @@ cmake_minimum_required(VERSION 3.22)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Define the build type
@@ -50,6 +52,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
     ${CMAKE_CURRENT_SOURCE_DIR}/User/gimbal_control.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/User/gimbal_to_chassis.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/User/vision.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/RemoteControl/DT7.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Alg/PID/pid.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Alg/ADRC/adrc.cpp
@@ -64,6 +67,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch/state_watch.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Common/StateWatch/buzzer_manager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/IMU/HI12_imu.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/APP/vofa.c
 )
 
 # Add include paths
@@ -87,6 +91,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Alg/Feedforward
     ${CMAKE_CURRENT_SOURCE_DIR}/User
     ${CMAKE_CURRENT_SOURCE_DIR}/Core/Inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/APP
 )
 
 # Add project symbols (macros)

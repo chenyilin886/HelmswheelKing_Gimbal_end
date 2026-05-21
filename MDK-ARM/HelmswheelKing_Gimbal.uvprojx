@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../APP/Gimbal;../Alg/Filter;../Alg/PID;../Alg/Feedforward;../HAL/CAN;../HAL/UART;../BSP/Common/FiniteStateMachine;../BSP/Common/StateWatch;../BSP/Motor/DM;../BSP/RemoteControl;../BSP/Motor;../User;../Alg/ADRC;../BSP/IMU/doc;../BSP/IMU;..\APP</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../APP/Gimbal;../Alg/Filter;../Alg/PID;../Alg/Feedforward;../HAL/CAN;../HAL/UART;../BSP/Common/FiniteStateMachine;../BSP/Common/StateWatch;../BSP/Motor/DM;../BSP/RemoteControl;../BSP/Motor;../User;../Alg/ADRC;../BSP/IMU/doc;../BSP/IMU;../APP;../HAL/CAN/interface;../HAL/UART/interface;..\User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -719,6 +719,11 @@
               <FileType>8</FileType>
               <FilePath>..\HAL\UART\interface\uart_bus.cpp</FilePath>
             </File>
+            <File>
+              <FileName>uart_bus.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\UART\interface\uart_bus.hpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -753,6 +758,26 @@
               <FileName>ladrc_improved.hpp</FileName>
               <FileType>5</FileType>
               <FilePath>..\Alg\ADRC\ladrc_improved.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>vision.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\User\vision.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>vision.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\vision.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>gimbal_axis.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\gimbal_axis.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>gimbal_target.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\gimbal_target.hpp</FilePath>
             </File>
           </Files>
         </Group>

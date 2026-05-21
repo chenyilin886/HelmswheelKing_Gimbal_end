@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.obj"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/APP/vofa.c.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/ADRC/adrc.cpp.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/Alg/Feedforward/Feedforward.cpp.obj"
@@ -107,6 +109,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_control.cpp.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/User/gimbal_to_chassis.cpp.obj.d"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.obj"
+  "CMakeFiles/HelmswheelKing_Gimbal.dir/User/vision.cpp.obj.d"
   "CMakeFiles/HelmswheelKing_Gimbal.dir/startup_stm32f407xx.s.obj"
   "HelmswheelKing_Gimbal.elf"
   "HelmswheelKing_Gimbal.elf.manifest"

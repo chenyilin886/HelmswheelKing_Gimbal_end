@@ -185,6 +185,24 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
     Gimbal_ProcessUARTRx(huart, Size);
 }
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    Gimbal_ProcessUARTRxCplt(huart);
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART6)
+    {
+        if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
+        {
+            __HAL_UART_CLEAR_OREFLAG(huart);
+        }
+        huart->ErrorCode = HAL_UART_ERROR_NONE;
+        HAL_UART_Receive_IT(huart, Gimbal_GetVisionRxBuffer(), Gimbal_GetVisionRxSize());
+    }
+}
 /* USER CODE END 4 */
 
 /**

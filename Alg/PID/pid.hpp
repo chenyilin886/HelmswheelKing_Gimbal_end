@@ -29,6 +29,9 @@ namespace ALG::PID
 
 
         public:
+            PID() : k_{0, 0, 0}, k_out_{0, 0, 0}, integral_(0), previous_error_(0),
+                    output_(0), max_(0), min_(0), target_(0), feedback_(0), error_(0),
+                    integral_limit_(0), integral_separation_threshold_(0) {}
             PID(float kp, float ki, float kd, float max, float integral_limit, float integral_separation_threshold_);
             float UpDate(float target, float feedback);
             void reset();

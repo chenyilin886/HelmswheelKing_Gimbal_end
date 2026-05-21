@@ -18,10 +18,14 @@ extern "C"
     void Gimbal_Update(void);
     void Gimbal_SendToChassis(void);
     void Gimbal_ProcessUARTRx(void *huart, uint16_t size);
+    void Gimbal_ProcessUARTRxCplt(void *huart);
     void Gimbal_ProcessCANRx(void *hcan);
     void Gimbal_ParseCANFrame(void *frame);
     void Gimbal_ProcessCANFifo0(void *hcan);
     void Gimbal_ProcessCANFifo1(void *hcan);
+    
+    uint8_t* Gimbal_GetVisionRxBuffer(void);
+    uint8_t Gimbal_GetVisionRxSize(void);
 
 #ifdef __cplusplus
 }
