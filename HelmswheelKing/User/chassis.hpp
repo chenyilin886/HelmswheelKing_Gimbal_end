@@ -24,10 +24,15 @@ public:
     BSP::Motor::Dji::GM3508<4>& get_wheel_motor() { return wheel_motor_; }
     BSP::Motor::LK::LK4005<4>& get_steer_motor() { return steer_motor_; }
 
+    float get_vx() const { return actual_vx_; }
+    float get_vy() const { return actual_vy_; }
+    float get_vw() const { return actual_vw_; }
+
 private:
+    void UpdateFK();
     // 1. 硬件实例
     BSP::Motor::Dji::GM3508<4> wheel_motor_;
-    BSP::Motor::LK::LK4005<4> steer_motor_;
+    BSP::Motor::LK::LK4005<4> steer_motor_;  
 
     // 2. 闭环控制器
     ALG::PID::PID wheel_pid_[4];
@@ -36,11 +41,15 @@ private:
 
     // 3. 运动学解算实例
     Alg::CalculationBase::String_IK string_ik_;
+    Alg::CalculationBase::String_FK string_fk_;
 
     // 4. 内部状态变量
     float target_vx_;
     float target_vy_;
     float target_vw_;
+    float actual_vx_;
+    float actual_vy_;
+    float actual_vw_;
 
     // 5. 运动学参数
     float debug_phase_[4];

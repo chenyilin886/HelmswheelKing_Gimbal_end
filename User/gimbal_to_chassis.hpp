@@ -12,8 +12,9 @@ namespace Comm
 constexpr uint32_t CAN_G2C_FRAME_ID = 0x205;
 
 struct __attribute__((packed)) GimbalToChassisFrame
+//定义了一个用于云台与底盘之间通信的数据帧（Data Frame）结构体
 {
-    uint8_t head;
+    uint8_t head;//帧头
     uint8_t lx;
     uint8_t ly;
     uint8_t mode;

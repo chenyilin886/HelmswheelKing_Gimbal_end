@@ -1,7 +1,7 @@
 #include "vofa.h"
 #include "usart.h"
 
-static uint8_t send_str2[sizeof(float) * 8];
+static uint8_t send_str2[sizeof(float) * 7];
 static volatile uint8_t vofa_busy = 0;
 
 void vofa_send(float x1, float x2, float x3, float x4, float x5, float x6) 

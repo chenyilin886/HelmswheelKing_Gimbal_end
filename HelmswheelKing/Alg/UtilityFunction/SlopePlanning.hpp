@@ -55,6 +55,14 @@ namespace Alg::Utility
              */
             void SetTarget(float target) { Target = target; };
             
+            void Reset()
+            {
+                Now_Planning = 0.0f;
+                Now_Real = 0.0f;
+                Target = 0.0f;
+                Out = 0.0f;
+            }
+            
             /**
              * @brief 斜坡规划主计算函数
              * 

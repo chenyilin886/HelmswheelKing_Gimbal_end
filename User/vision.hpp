@@ -14,7 +14,7 @@ class Vision
 public:
     static constexpr uint8_t TX_FRAME_HEAD1 = 0x39;
     static constexpr uint8_t TX_FRAME_HEAD2 = 0x39;
-    static constexpr uint8_t TX_FRAME_TAIL = 0xFF;
+    static constexpr uint8_t TX_FRAME_TAIL = 0xFF;//尾帧
     static constexpr uint8_t TX_FRAME_SIZE = 29;
 
     static constexpr uint8_t RX_FRAME_HEAD1 = 0x39;
@@ -27,7 +27,7 @@ public:
         float quat_x;
         float quat_y;
         float quat_z;
-        uint32_t timestamp;
+        uint32_t timestamp;//时间戳
     };
 
     struct TxOther
@@ -53,7 +53,7 @@ public:
         uint8_t aim_x;
         uint8_t aim_y;
     };
-
+    //调试结构体
     struct DebugData
     {
         uint32_t tx_count;
@@ -83,8 +83,9 @@ public:
     };
 
     Vision() : tx_timestamp_(0), vision_flag_(false), fire_update_count_(0) {}
-
+    //把四元数传进去，把数据打包发给上位机
     void send(float quat_w, float quat_x, float quat_y, float quat_z);
+    //接收数据
     void receive();
 
     float getTargetYaw() const { return target_yaw_; }
@@ -109,16 +110,16 @@ public:
     DebugData& getDebugData() { return debug_data_; }
 
 private:
-    void packTxFrame();
-    bool parseRxFrame();
+    void packTxFrame();// 把上面那些零散的结构体，按照协议拼成一段 29 字节的数组
+    bool parseRxFrame();// 把收到的一长串数组，拆解并检查帧头帧尾对不对，提取出角度
 
     TxGimbal tx_gimbal_{};
     TxOther tx_other_{};
     RxTarget rx_target_{};
     RxOther rx_other_{};
 
-    uint8_t tx_buffer_[TX_FRAME_SIZE]{};
-    uint8_t rx_buffer_[RX_FRAME_SIZE]{};
+    uint8_t tx_buffer_[TX_FRAME_SIZE]{};// 发送缓存区
+    uint8_t rx_buffer_[RX_FRAME_SIZE]{};// 接收缓存区
 
     uint32_t tx_timestamp_;
     float target_yaw_{0.0f};

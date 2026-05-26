@@ -22,11 +22,13 @@
 #include "can.h"
 #include "dma.h"
 #include "usart.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "gimbal_c_api.h"
+#include "vofa.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,6 +100,7 @@ int main(void)
   MX_CAN2_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_Delay(500);
   Gimbal_InitCANBus();
   Gimbal_StartUARTReceive();
   Gimbal_StartIMUReceive();
@@ -149,7 +152,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 6;
   RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -171,6 +174,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART6) // 确保是发�? VOFA+ 的那个串�?
+    {
+        vofa_tx_complete(); // 清除 busy 标志位，允许发�?�下�?�?
+    }
+}
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
     Gimbal_ProcessCANFifo0(hcan);
@@ -193,15 +203,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 {
-    if (huart->Instance == USART6)
-    {
-        if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
-        {
-            __HAL_UART_CLEAR_OREFLAG(huart);
-        }
-        huart->ErrorCode = HAL_UART_ERROR_NONE;
-        HAL_UART_Receive_IT(huart, Gimbal_GetVisionRxBuffer(), Gimbal_GetVisionRxSize());
-    }
+    // if (huart->Instance == USART6)
+    // {
+    //     if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
+    //     {
+    //         __HAL_UART_CLEAR_OREFLAG(huart);
+    //     }
+    //     huart->ErrorCode = HAL_UART_ERROR_NONE;
+    //     HAL_UART_Receive_IT(huart, Gimbal_GetVisionRxBuffer(), Gimbal_GetVisionRxSize());
+    // }
 }
 /* USER CODE END 4 */
 

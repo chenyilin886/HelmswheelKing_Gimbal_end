@@ -263,7 +263,7 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
@@ -391,7 +391,7 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
@@ -1247,10 +1247,10 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "D:/Project/HelmswheelKing_Gimbal/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{

@@ -15,12 +15,11 @@ void Alg::Utility::SlopePlanning::TIM_Calculate_PeriodElapsedCallback(float targ
     SetTarget(target);
     SetNowReal(feedback);
     // 规划为当前真实值优先的额外逻辑
-    if ((Target >= Now_Real && Now_Real >= Now_Planning) || (Target <= Now_Real && Now_Real <= Now_Planning))
+    if ((Target > Now_Real && Now_Real > Now_Planning) || (Target < Now_Real && Now_Real < Now_Planning))
     {
         Out = Now_Real;
     }
-
-    if (Now_Planning > 0.0f)
+    else if (Now_Planning > 0.0f)
     {
         if (Target > Now_Planning)
         {

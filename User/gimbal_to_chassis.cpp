@@ -7,7 +7,7 @@ void GimbalToChassis::packFrame(float left_x, float left_y, float yaw_angle_err,
 {
     mode_ = mode;
 
-    frame_.head = 0xA5;
+    frame_.head = 0xA5;//校验帧头
     frame_.lx = floatToChannel(left_x);
     frame_.ly = floatToChannel(left_y);
     frame_.yaw_angle_err = yaw_angle_err;

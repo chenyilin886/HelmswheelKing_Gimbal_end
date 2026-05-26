@@ -28,7 +28,7 @@ public:
         Comm::vision.setEnemyColor(0x52);
         Comm::vision.setVisionMode(1);
         Comm::vision.setBulletSpeed(26.0f);
-        startVisionReceive(); // 启动 UART6 接收视觉数据
+        //startVisionReceive(); // 启动 UART6 接收视觉数据
     }
 
     void enableMotors() { startMotorEnable(); }
@@ -181,23 +181,26 @@ public:
 
     void processUARTRxCplt(UART_HandleTypeDef *huart)
     {
-        if (huart->Instance == USART6)
-        {
-            if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
-                __HAL_UART_CLEAR_OREFLAG(huart);
+        // if (huart->Instance == USART6)
+        // {
+        //     if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
+        //         __HAL_UART_CLEAR_OREFLAG(huart);
 
-            if (huart->ErrorCode != HAL_UART_ERROR_NONE)
-                huart->ErrorCode = HAL_UART_ERROR_NONE;
+        //     if (huart->ErrorCode != HAL_UART_ERROR_NONE)
+        //         huart->ErrorCode = HAL_UART_ERROR_NONE;
 
-            Comm::vision.receive();
+        //     Comm::vision.receive();
 
-            auto &uart6 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart6);
-            HAL::UART::Data data{Comm::vision.getRxBuffer(), Comm::Vision::getRxSize()};
-            if (!uart6.receive(data))
-            {
-                HAL_UART_Receive_IT(huart, Comm::vision.getRxBuffer(), Comm::Vision::getRxSize());
-            }
-        }
+        //     auto &uart6 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart6);
+        //     HAL::UART::Data data{Comm::vision.getRxBuffer(), Comm::Vision::getRxSize()};
+        //     if (!uart6.receive(data))
+        //     {
+        //         HAL_UART_Receive_IT(huart, Comm::vision.getRxBuffer(), Comm::Vision::getRxSize());
+        //     }
+        // }
+        
+        // 视觉接收已迁移至 USB CDC
+        (void)huart;
     }
 
     void processCANRx(CAN_HandleTypeDef *hcan) { (void)hcan; }

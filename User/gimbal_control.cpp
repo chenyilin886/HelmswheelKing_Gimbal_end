@@ -3,7 +3,8 @@
 #include "cmsis_os.h"
 #include <cmath>
 #include "vofa.h"
-
+#include <cstring>
+#include "usbd_cdc_if.h"
 static GimbalDriver driver_;
 static GimbalAxis yaw_axis_;
 static GimbalAxis pitch_axis_;
@@ -17,9 +18,9 @@ Comm::Vision::DebugData vision_debug = {};
 static void InitAxes()
 {
     gimbal_tune.yaw = {
-        .vel_kp = 5.0f, .vel_kd = 0.0f, .vel_wc = 35.0f, .vel_b0 = 22.0f, .vel_max = 3.5f,
-        .ang_kp = 10.0f, .ang_kd = 0.0f, .ang_wc = 35.0f, .ang_b0 = 20.0f, .ang_max = 3.5f,
-        .pid_kp = 20.0f, .pid_ki = 0.02f, .pid_kd = 0.3f,
+        .vel_kp = 6.5f, .vel_kd = 0.2f, .vel_wc = 35.0f, .vel_b0 = 22.0f, .vel_max = 3.5f,
+        .ang_kp = 6.0f, .ang_kd = 0.0f, .ang_wc = 35.0f, .ang_b0 = 20.0f, .ang_max = 3.5f,
+        .pid_kp = 10.0f, .pid_ki = 0.0f, .pid_kd = 0.1f,
         .pid_max = 8.0f, .pid_ilimit = 2.0f, .pid_isep = 0.04f,//积分分离阈值
         .td_r = 80.0f,//跟踪微分器快速性
         .gravity_k = 0.0f, .gravity_phi = 0.0f,
@@ -31,15 +32,15 @@ static void InitAxes()
         .angle_min_deg = -20.0f,
     };
     gimbal_tune.pitch = {
-        .vel_kp = 80.0f, .vel_kd = 0.0f, .vel_wc = 40.0f, .vel_b0 = 15.0f, .vel_max = 0.53f,
-        .ang_kp = 8.0f, .ang_kd = 0.0f, .ang_wc = 38.0f, .ang_b0 = 6.0f, .ang_max = 0.5f,
-        .pid_kp = 10.0f, .pid_ki = 0.0f, .pid_kd = 80.0f,
-        .pid_max = 0.8f, .pid_ilimit = 1.0f, .pid_isep = 0.1f,
+        .vel_kp = 100.0f, .vel_kd = 0.0f, .vel_wc = 50.0f, .vel_b0 = 8.0f, .vel_max = 0.53f,
+        .ang_kp = 10.0f, .ang_kd = 0.3f, .ang_wc = 40.0f, .ang_b0 = 8.0f, .ang_max = 0.5f,
+        .pid_kp = 30.0f, .pid_ki = 0.2f, .pid_kd = 80.0f,
+        .pid_max = 2.5f, .pid_ilimit = 1.0f, .pid_isep = 0.1f,
         .td_r = 80.0f,
-        .gravity_k = 0.95f, .gravity_phi = 0.0f,
-        .vel_limit = 4.0f,
+        .gravity_k = 1.0f, .gravity_phi = 0.0f,
+        .vel_limit = 2.0f,
         .runaway_thresh = 10,
-        .torque_limit = 3.0f,
+        .torque_limit = 1.8f,
         .torque_sign = 1.0f,
         .angle_max_deg = 20.0f,
         .angle_min_deg = -15.0f,
@@ -147,6 +148,8 @@ static void resetAllControllers()
 
 void Update()
 {
+    Gimbal_ProcessUSBFromTask();
+
     if (driver_.getRC().get_s1() == BSP::REMOTE_CONTROL::RemoteController::DOWN &&
         driver_.getRC().get_s2() == BSP::REMOTE_CONTROL::RemoteController::DOWN)
     {
@@ -366,11 +369,12 @@ static float ZeroCrossingProcessing(float expectations, float feedback, float ma
 }
 
 float CalcuGimbalToChassisAngle()
+//计算云台相对于底盘的相对偏航角差值，处理了角度在 360 度到 0 度之间的“突变”问题
 {
     float encoder_angle = driver_.getMotor().getAngle0_360(GimbalDriver::YAW_ID);
     return ZeroCrossingProcessing(77.0f, encoder_angle, 360.0f) - encoder_angle;
 }
-
+//常数77.0f代表云台正对着底盘前方时，偏航轴电机编码器的真实读数
 }
 
 extern "C" void Gimbal_Init(void)               { Gimbal::Init(); }
@@ -402,12 +406,59 @@ extern "C" void Gimbal_ProcessCANFifo1(void *hcan)
     Gimbal::ProcessCANFifo1((CAN_HandleTypeDef *)hcan);
 }
 
-extern "C" uint8_t* Gimbal_GetVisionRxBuffer(void)
-{
-    return Comm::vision.getRxBuffer();
-}
+// extern "C" uint8_t* Gimbal_GetVisionRxBuffer(void)
+// {
+//     return Comm::vision.getRxBuffer();
+// }
 
-extern "C" uint8_t Gimbal_GetVisionRxSize(void)
+// extern "C" uint8_t Gimbal_GetVisionRxSize(void)
+// {
+//     return Comm::Vision::getRxSize();
+// }
+
+//USB CDC
+#define RX_STREAM_BUF_SIZE 256
+static uint8_t rx_stream_buf[RX_STREAM_BUF_SIZE];
+static uint16_t rx_stream_len = 0;
+
+extern "C" void Gimbal_ProcessUSBFromTask(void)
 {
-    return Comm::Vision::getRxSize();
+    uint8_t tmp[64];
+    uint16_t n = CDC_ReadRxData(tmp, sizeof(tmp));
+    if (n == 0)
+        return;
+
+    if (rx_stream_len + n > RX_STREAM_BUF_SIZE)
+    {
+        rx_stream_len = 0;
+    }
+
+    std::memcpy(&rx_stream_buf[rx_stream_len], tmp, n);
+    rx_stream_len += n;
+
+    uint8_t frame_size = Comm::Vision::getRxSize();
+
+    while (rx_stream_len >= frame_size)
+    {
+        if (rx_stream_buf[0] == Comm::Vision::RX_FRAME_HEAD1 &&
+            rx_stream_buf[1] == Comm::Vision::RX_FRAME_HEAD2)
+        {
+            std::memcpy(Comm::vision.getRxBuffer(), rx_stream_buf, frame_size);
+            Comm::vision.receive();
+
+            rx_stream_len -= frame_size;
+            if (rx_stream_len > 0)
+            {
+                std::memmove(rx_stream_buf, &rx_stream_buf[frame_size], rx_stream_len);
+            }
+        }
+        else
+        {
+            rx_stream_len -= 1;
+            if (rx_stream_len > 0)
+            {
+                std::memmove(rx_stream_buf, &rx_stream_buf[1], rx_stream_len);
+            }
+        }
+    }
 }

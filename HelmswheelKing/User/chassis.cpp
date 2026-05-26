@@ -28,17 +28,20 @@ Chassis::Chassis()
       },
       // 初始化舵向速度环 PID
       steer_velocity_pid_{
-          {0.7f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
-          {0.7f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
-          {0.7f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
-          {0.7f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f}
+          {2.0f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
+          {2.0f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
+          {2.0f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f},
+          {2.0f, 0.0f, 0.0f, 16384.0f, 2500.0f, 100.0f}
       },
-      // 初始化运动学解算器 (注意这里用临时数组给指针传参的方式)
+      // 初始化运动学解算器
       string_ik_(0.17f, 0.055f, 
                  (float[]){5.0f*M_PI_F/4.0f, 7.0f*M_PI_F/4.0f, M_PI_F/4.0f, 3.0f*M_PI_F/4.0f}, 
                  (float[]){4.804619f - P4, 1.424031f - P3, 4.734439f + P3, 4.575001f + P4}),
+      string_fk_(0.17f, 0.055f,
+                 (float[]){5.0f*M_PI_F/4.0f, 7.0f*M_PI_F/4.0f, M_PI_F/4.0f, 3.0f*M_PI_F/4.0f}),
       target_vx_(0.0f), target_vy_(0.0f), target_vw_(0.0f),
-      debug_phase_{-2.1f, 0.1f, -1.4f, 0.0f},
+      actual_vx_(0.0f), actual_vy_(0.0f), actual_vw_(0.0f),
+      debug_phase_{-2.1f, 0.02f, -1.3f, 0.0f},
       debug_linear_gain_(0.5f), debug_angular_gain_(1.5f)
 {
     // 构造函数体留空
@@ -81,24 +84,27 @@ void Chassis::Update() {
                           std::fabs(target_vw_) < 0.01f);
     
     for (int i = 0; i < 4; i++) {
+        // --- 舵向电机控制 (LK4005) ---
+        float current_steer = steer_motor_.getAngleDeg(i + 1);
+        float target_steer;
         if (is_zero_speed) {
-            steer_outputs[i] = 0;
+            target_steer = current_steer;
+        } else {
+            target_steer = (string_ik_.GetMotor_direction(i) + debug_phase_[i]) * 57.29578f;
+        }
+        
+        steer_angle_pid_[i].UpDate(target_steer, current_steer);
+        steer_velocity_pid_[i].UpDate(steer_angle_pid_[i].getOutput(), steer_motor_.getVelocityRpm(i + 1));
+        
+        int16_t steer_output = (int16_t)steer_velocity_pid_[i].getOutput();
+        if(steer_output > 1500) steer_output = 1500;
+        if(steer_output < -1500) steer_output = -1500;
+        steer_outputs[i] = steer_output;
+
+        // --- 轮向电机控制 (3508) ---
+        if (is_zero_speed) {
             wheel_motor_.setCAN(0, i + 1);
         } else {
-            // --- 舵向电机控制 (LK4005) ---
-            float target_steer = (string_ik_.GetMotor_direction(i) + debug_phase_[i]) * 57.29578f;
-            float current_steer = steer_motor_.getAngleDeg(i + 1);
-            
-            steer_angle_pid_[i].UpDate(target_steer, current_steer);
-            steer_velocity_pid_[i].UpDate(steer_angle_pid_[i].getOutput(), steer_motor_.getVelocityRpm(i + 1));
-            
-            int16_t steer_output = (int16_t)steer_velocity_pid_[i].getOutput();
-            // 限制幅值
-            if(steer_output > 1000) steer_output = 1000;
-            if(steer_output < -1000) steer_output = -1000;
-            steer_outputs[i] = steer_output;
-
-            // --- 轮向电机控制 (3508) ---
             float target_wheel = string_ik_.GetMotor_wheel(i);
             float current_wheel = wheel_motor_.getVelocityRpm(i + 1);
             
@@ -112,4 +118,28 @@ void Chassis::Update() {
     // 4. 发送电流值
     steer_motor_.ctrl_Multi(steer_outputs);
     wheel_motor_.sendCAN();
+
+    UpdateFK();
+}
+
+void Chassis::UpdateFK()
+{
+    constexpr float wheel_reduction_ratio = 19.0f;
+
+    for (int i = 0; i < 4; i++)
+    {
+        float steer_angle_rad = steer_motor_.getAngleRad(i + 1);
+        string_fk_.Set_current_steer_angles(steer_angle_rad - debug_phase_[i], i);
+    }
+
+    string_fk_.OmniForKinematics(
+        wheel_motor_.getVelocityRads(1) / wheel_reduction_ratio,
+        wheel_motor_.getVelocityRads(2) / wheel_reduction_ratio,
+        wheel_motor_.getVelocityRads(3) / wheel_reduction_ratio,
+        wheel_motor_.getVelocityRads(4) / wheel_reduction_ratio
+    );
+
+    actual_vx_ = string_fk_.GetChassisVx();
+    actual_vy_ = string_fk_.GetChassisVy();
+    actual_vw_ = string_fk_.GetChassisVw();
 }

@@ -23,9 +23,10 @@ extern "C"
     void Gimbal_ParseCANFrame(void *frame);
     void Gimbal_ProcessCANFifo0(void *hcan);
     void Gimbal_ProcessCANFifo1(void *hcan);
-    
-    uint8_t* Gimbal_GetVisionRxBuffer(void);
-    uint8_t Gimbal_GetVisionRxSize(void);
+    //USB CDC 接收回调桥接函数
+    void Gimbal_ProcessUSBFromTask(void);
+    // uint8_t* Gimbal_GetVisionRxBuffer(void);
+    // uint8_t Gimbal_GetVisionRxSize(void);
 
 #ifdef __cplusplus
 }

@@ -1,7 +1,8 @@
 #include "vision.hpp"
 #include "uart_bus.hpp"
 #include "gimbal_to_chassis.hpp"
-
+// 引入 USB CDC 接口头文件
+#include "usbd_cdc_if.h"
 namespace Comm
 {
 
@@ -19,10 +20,13 @@ void Vision::send(float quat_w, float quat_x, float quat_y, float quat_z)
 
     packTxFrame();
 
-    auto &uart = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart6);
-    HAL::UART::Data data{tx_buffer_, TX_FRAME_SIZE};
-    uart.transmit(data); // 通过 UART6 发出
-    
+    // auto &uart = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart6);
+    // HAL::UART::Data data{tx_buffer_, TX_FRAME_SIZE};
+    // uart.transmit(data); // 通过 UART6 发出
+
+
+    // 使用 USB CDC 发送数据
+    CDC_Transmit_FS(tx_buffer_, TX_FRAME_SIZE);
 
     debug_data_.tx_count++;
     debug_data_.tx_quat_w = tx_gimbal_.quat_w;

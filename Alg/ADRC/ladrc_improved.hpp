@@ -28,6 +28,12 @@ public:
         x2_ = 0;
     }
 
+    void setState(float x1, float x2)
+    {
+        x1_ = x1;
+        x2_ = x2;
+    }
+
     void setR(float r) { r_ = r; }
 
 private:
