@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "gimbal_c_api.h"
+#include "usbd_cdc_if.h"//为了能调用 CDC_Transmit_FS
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +60,19 @@ osThreadId_t GimbalTaskHandle;
 const osThreadAttr_t GimbalTask_attributes = {
   .name = "GimbalTask",
   .stack_size = 2048 * 4,
-  .priority = (osPriority_t) osPriorityRealtime,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for visionTxTask */
+osThreadId_t visionTxTaskHandle;
+const osThreadAttr_t visionTxTask_attributes = {
+  .name = "visionTxTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for visionTxQueue */
+osMessageQueueId_t visionTxQueueHandle;
+const osMessageQueueAttr_t visionTxQueue_attributes = {
+  .name = "visionTxQueue"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,6 +82,7 @@ const osThreadAttr_t GimbalTask_attributes = {
 
 void StartDefaultTask(void *argument);
 void gimbalTask(void *argument);
+void StartVisionTxTask(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -95,6 +109,10 @@ void MX_FREERTOS_Init(void) {
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* creation of visionTxQueue */
+  visionTxQueueHandle = osMessageQueueNew (10, 29, &visionTxQueue_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -105,6 +123,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of GimbalTask */
   GimbalTaskHandle = osThreadNew(gimbalTask, NULL, &GimbalTask_attributes);
+
+  /* creation of visionTxTask */
+  visionTxTaskHandle = osThreadNew(StartVisionTxTask, NULL, &visionTxTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -157,6 +178,40 @@ void gimbalTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END gimbalTask */
+}
+
+/* USER CODE BEGIN Header_StartVisionTxTask */
+/**
+* @brief Function implementing the visionTxTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartVisionTxTask */
+void StartVisionTxTask(void *argument)
+{
+  /* USER CODE BEGIN StartVisionTxTask */
+  // 准备一个 29 字节的本地数组，用来“接货”
+  uint8_t tx_buf[29];
+  uint8_t usb_ret;
+  /* Infinite loop */
+  for(;;)
+  {
+    // 1. 从队列中拿数据。osWaitForever 表示如果没有数据，任务就进入休眠，完全不占 CPU
+    if (osMessageQueueGet(visionTxQueueHandle, tx_buf, NULL, osWaitForever) == osOK)
+    {
+      // 2. 拿到了数据，立刻尝试用 USB 发送
+      usb_ret = CDC_Transmit_FS(tx_buf, 29);
+      
+      // 3. 安全的防丢包机制：如果此时 USB 硬件正忙，就稍等 1ms 再试一次，直到发出去为止
+      // 注意：这里用 osDelay 是绝对安全的，因为这是个独立的普通优先级任务，绝不会卡死云台电机！
+      while (usb_ret == USBD_BUSY)
+      {
+        osDelay(1);
+        usb_ret = CDC_Transmit_FS(tx_buf, 29);
+      }
+    }
+  }
+  /* USER CODE END StartVisionTxTask */
 }
 
 /* Private application code --------------------------------------------------*/

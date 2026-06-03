@@ -1,3 +1,4 @@
+//视觉发送:Gimbal::Update() 的末尾
 #include "gimbal_control.hpp"
 #include "gimbal_c_api.h"
 #include "cmsis_os.h"
@@ -5,12 +6,13 @@
 #include "vofa.h"
 #include <cstring>
 #include "usbd_cdc_if.h"
-static GimbalDriver driver_;
-static GimbalAxis yaw_axis_;
+//实例化
+static GimbalDriver driver_;//底层驱动
+static GimbalAxis yaw_axis_;//两个轴控制器
 static GimbalAxis pitch_axis_;
-static GimbalTarget target_gen_;
+static GimbalTarget target_gen_;//目标生成器
 static GimbalMode gimbal_mode = GimbalMode::ANGLE;
-
+//static，意味着只在这个文件内可见
 GimbalDebugData gimbal_debug = {};
 GimbalTuneData gimbal_tune = {};
 Comm::Vision::DebugData vision_debug = {};
@@ -49,7 +51,7 @@ static void InitAxes()
     gimbal_tune.yaw_vel_scale = 4.0f;
     gimbal_tune.pitch_vel_scale = 3.0f;
     gimbal_tune.pitch_angle_scale = 0.3f;
-
+    //初始化
     yaw_axis_.init({
         .tune = gimbal_tune.yaw,
     });
@@ -62,16 +64,17 @@ static void InitAxes()
 
     target_gen_.init({});
 }
-
+//对外公共接口（API）
 namespace Gimbal
 {
-
+//启动与初始化
 void Init()
 {
     InitAxes();
     driver_.init();
 }
 
+//数据搬运工 (CAN 与 串口收发)
 void ParseCANFrame(const HAL::CAN::Frame &frame)
 {
     driver_.parseCANFrame(frame);
@@ -86,12 +89,12 @@ void StartIMUReceive()
 {
     driver_.startIMUReceive();
 }
-
+//视觉接收
 void StartVisionReceive()
 {
     driver_.init();
 }
-
+//电机启停与安全机制
 void EnableMotors()
 {
     driver_.enableMotors();
@@ -110,29 +113,35 @@ static GimbalMode getGimbalMode()
     uint8_t s2 = driver_.getRC().get_s2();
 
     if (s2 == BSP::REMOTE_CONTROL::RemoteController::MIDDLE && Comm::vision.getVisionFlag())
-        return GimbalMode::VISION;
+        return GimbalMode::VISION;// 右拨杆居中且视觉连上：自瞄模式
     if (s1 == BSP::REMOTE_CONTROL::RemoteController::MIDDLE)
-        return GimbalMode::VELOCITY;
-    return GimbalMode::ANGLE;
+        return GimbalMode::VELOCITY;// 左拨杆居中：速度模式
+    else
+    return GimbalMode::ANGLE;// 默认：角度打杆模式
 }
-
+\
 static void handleModeSwitch(GimbalMode new_mode, float cur_yaw_rad, float cur_pitch_deg)
 {
     if (new_mode == gimbal_mode) return;
 
     if (new_mode == GimbalMode::VISION)
-    {
+    {   //把目标角度重置为当前的真实物理角度
         target_gen_.resetTargets(cur_yaw_rad, cur_pitch_deg);
+        //清除底层的 PID 积分和 ADRC 历史数据
         yaw_axis_.resetControllers();
         pitch_axis_.resetControllers();
     }
     else if (new_mode == GimbalMode::VELOCITY)
-    {
+    {   //把目标速度重置为0
+        target_gen_.resetTargets(0.0f, 0.0f);
+        //清除底层的 PID 积分和 ADRC 历史数据
+        yaw_axis_.resetControllers();
         yaw_axis_.resetControllers();
         pitch_axis_.resetControllers();
     }
     else
     {
+        //默认的 ANGLE 模式
         target_gen_.resetTargets(cur_yaw_rad, cur_pitch_deg);
         yaw_axis_.resetControllers();
         pitch_axis_.resetControllers();
@@ -149,7 +158,7 @@ static void resetAllControllers()
 void Update()
 {
     Gimbal_ProcessUSBFromTask();
-
+    //双下急停与一大堆检测
     if (driver_.getRC().get_s1() == BSP::REMOTE_CONTROL::RemoteController::DOWN &&
         driver_.getRC().get_s2() == BSP::REMOTE_CONTROL::RemoteController::DOWN)
     {
@@ -207,12 +216,12 @@ void Update()
     }
     if (!yaw_motor_ok && !pitch_motor_ok)
         return;
-
+    // 读陀螺仪当前角度和角速度
     float cur_yaw_rad = driver_.getIMU().GetAngle(2) * DEG_TO_RAD;
     float cur_yaw_vel = driver_.getIMU().GetGyro(2) * DEG_TO_RAD;
-    float pitch_angle_deg = driver_.getIMU().GetAngle(1);
+    float pitch_angle_deg = driver_.getIMU().GetAngle(1);//单位deg
     float cur_pitch_vel = driver_.getIMU().GetGyro(1) * DEG_TO_RAD;
-
+    // 检查读出的数据是不是 NaN (Not a Number)，安全保护机制
     if (std::isnan(cur_yaw_rad) || std::isnan(cur_yaw_vel) ||
         std::isnan(pitch_angle_deg) || std::isnan(cur_pitch_vel))
     {
@@ -221,20 +230,21 @@ void Update()
         resetAllControllers();
         return;
     }
-
+    // 获取并切换模式
     GimbalMode new_mode = getGimbalMode();
     handleModeSwitch(new_mode, cur_yaw_rad, pitch_angle_deg);
-
+    // 应用新的参数
     yaw_axis_.applyTuneParams(gimbal_tune.yaw);
     pitch_axis_.applyTuneParams(gimbal_tune.pitch);
     target_gen_.applyScaleParams(gimbal_tune.yaw_vel_scale, gimbal_tune.pitch_vel_scale, gimbal_tune.pitch_angle_scale);
-
+    // 把当前状态喂给目标生成器，更新目标角度
     auto target = target_gen_.update(gimbal_mode, cur_yaw_rad, pitch_angle_deg,
                                      yaw_axis_, pitch_axis_,
                                      driver_.getRC(), Comm::vision);
 
     if (gimbal_mode == GimbalMode::VELOCITY)
     {
+        // 软限位
         target.pitch_vel_target = pitch_axis_.applyAngleSafetyLimit(
             target.pitch_vel_target, pitch_angle_deg);
     }
@@ -242,10 +252,11 @@ void Update()
     float yaw_torque = 0.0f;
     if (yaw_motor_ok)
     {
+        // 计算Yaw轴力矩 (经过防飞车检查 -> ADRC运算)
         yaw_axis_.checkRunaway(cur_yaw_vel);
         yaw_torque = yaw_axis_.computeTorque(gimbal_mode, target.yaw_vel_target, cur_yaw_vel);
     }
-    // 发送yaw角度目标
+    // 发送给达妙电机
     driver_.sendTorque(GimbalDriver::YAW_ID, yaw_torque);
 
     float pitch_torque = 0.0f;
@@ -279,17 +290,19 @@ void Update()
     gimbal_debug.yaw_runaway = yaw_axis_.isRunaway() ? 1 : 0;
     gimbal_debug.pitch_runaway = pitch_axis_.isRunaway() ? 1 : 0;
     gimbal_debug.gimbal_mode = (gimbal_mode == GimbalMode::ANGLE) ? 0 : 1;
-
+    
+    // 发送Vofa数据
     vofa_send(cur_yaw_rad, target_gen_.getTargetYawRad(), target.pitch_vel_target,
               cur_pitch_vel, pitch_torque, gimbal_debug.gravity_ff);
-
+    // 发送视觉数据
+    Comm::vision.receive();
     Comm::vision.send(driver_.getIMU().GetQuaternion(0),
                        driver_.getIMU().GetQuaternion(1),
                        driver_.getIMU().GetQuaternion(2),
                        driver_.getIMU().GetQuaternion(3));
     vision_debug = Comm::vision.getDebugData();
 }
-
+//将云台数据发送给底盘
 void SendToChassis()
 {
     float left_x = 0.0f;
@@ -323,7 +336,7 @@ void SendToChassis()
         else
             mode.stop = 1;
     }
-
+    // 发送给底盘
     driver_.sendToChassis(left_x, left_y, yaw_angle_err, mode);
 }
 
@@ -351,7 +364,7 @@ void ProcessCANFifo1(CAN_HandleTypeDef *hcan)
         while (can2.receive(rx_frame)) {}
     }
 }
-
+// 过零点处理算法
 static float ZeroCrossingProcessing(float expectations, float feedback, float maxpos)
 {
     float tempcin = expectations;
@@ -406,24 +419,16 @@ extern "C" void Gimbal_ProcessCANFifo1(void *hcan)
     Gimbal::ProcessCANFifo1((CAN_HandleTypeDef *)hcan);
 }
 
-// extern "C" uint8_t* Gimbal_GetVisionRxBuffer(void)
-// {
-//     return Comm::vision.getRxBuffer();
-// }
 
-// extern "C" uint8_t Gimbal_GetVisionRxSize(void)
-// {
-//     return Comm::Vision::getRxSize();
-// }
 
-//USB CDC
+//USB CDC与视觉通信的接收部分
 #define RX_STREAM_BUF_SIZE 256
 static uint8_t rx_stream_buf[RX_STREAM_BUF_SIZE];
 static uint16_t rx_stream_len = 0;
 
 extern "C" void Gimbal_ProcessUSBFromTask(void)
 {
-    uint8_t tmp[64];
+    uint8_t tmp[64];//USB FS（全速）协议一次最多传 64 字节
     uint16_t n = CDC_ReadRxData(tmp, sizeof(tmp));
     if (n == 0)
         return;
@@ -431,6 +436,7 @@ extern "C" void Gimbal_ProcessUSBFromTask(void)
     if (rx_stream_len + n > RX_STREAM_BUF_SIZE)
     {
         rx_stream_len = 0;
+        // 如果数据太多装不下了，说明之前的数据卡死了，直接清空重来
     }
 
     std::memcpy(&rx_stream_buf[rx_stream_len], tmp, n);
@@ -440,19 +446,23 @@ extern "C" void Gimbal_ProcessUSBFromTask(void)
 
     while (rx_stream_len >= frame_size)
     {
+        // 检查头两个字节是不是协议规定的“帧头”
         if (rx_stream_buf[0] == Comm::Vision::RX_FRAME_HEAD1 &&
             rx_stream_buf[1] == Comm::Vision::RX_FRAME_HEAD2)
         {
+            // 提取数据：把这一整帧拷贝给视觉模块
             std::memcpy(Comm::vision.getRxBuffer(), rx_stream_buf, frame_size);
             Comm::vision.receive();
-
+            // 把这一帧的长度从总长度里扣除
             rx_stream_len -= frame_size;
             if (rx_stream_len > 0)
             {
+                // 如果传送带上还有剩下的数据，就把它们“往前平移”，填补刚才拿走的空位
                 std::memmove(rx_stream_buf, &rx_stream_buf[frame_size], rx_stream_len);
             }
         }
         else
+        
         {
             rx_stream_len -= 1;
             if (rx_stream_len > 0)

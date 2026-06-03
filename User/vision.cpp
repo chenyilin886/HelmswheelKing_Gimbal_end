@@ -3,11 +3,16 @@
 #include "gimbal_to_chassis.hpp"
 // 引入 USB CDC 接口头文件
 #include "usbd_cdc_if.h"
+#include "cmsis_os.h" // 引入 FreeRTOS 的 API
+extern "C" {
+    // 引用在 CubeMX 里生成的队列句柄
+    extern osMessageQueueId_t visionTxQueueHandle; 
+}
 namespace Comm
 {
 
 Vision vision;
-
+\
 void Vision::send(float quat_w, float quat_x, float quat_y, float quat_z)
 {
     tx_gimbal_.quat_w = quat_w;
@@ -26,9 +31,17 @@ void Vision::send(float quat_w, float quat_x, float quat_y, float quat_z)
 
 
     // 使用 USB CDC 发送数据
-    CDC_Transmit_FS(tx_buffer_, TX_FRAME_SIZE);
+    // 直接把打包好的数据扔进传送带 (队列)
+    if (visionTxQueueHandle != NULL)
+    {
+        // 0 表示如果队列满了（比如拔掉USB线），绝不死等，直接丢弃这帧数据，保护云台主控循环！
+        osStatus_t status = osMessageQueuePut(visionTxQueueHandle, tx_buffer_, 0, 0);
+        if (status == osOK)
+        {
+            debug_data_.tx_count++; // 成功放入队列，计数增加
+        }
+    }
 
-    debug_data_.tx_count++;
     debug_data_.tx_quat_w = tx_gimbal_.quat_w;
     debug_data_.tx_quat_x = tx_gimbal_.quat_x;
     debug_data_.tx_quat_y = tx_gimbal_.quat_y;

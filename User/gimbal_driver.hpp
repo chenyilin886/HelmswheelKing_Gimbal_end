@@ -1,3 +1,6 @@
+//作用：把所有的底层硬件（达妙电机、大疆遥控器、HI12 陀螺仪、CAN 发送、串口 DMA 接收）
+//全部打包封装起来，然后对外提供接口
+//视觉模块初始化
 #ifndef GIMBAL_DRIVER_HPP
 #define GIMBAL_DRIVER_HPP
 
@@ -6,7 +9,7 @@
 #include "DmMotor.hpp"
 #include "DT7.hpp"
 #include "HI12_imu.hpp"
-#include "can_hal.hpp"
+#include "can_hal.hpp"   
 #include "uart_hal.hpp"
 #include "gimbal_to_chassis.hpp"
 #include "vision.hpp"
@@ -19,7 +22,7 @@ public:
     static constexpr uint8_t YAW_ID = 2;
     static constexpr uint16_t DBUS_BUF_SIZE = 18;
     static constexpr uint16_t IMU_BUF_SIZE = 82;
-    static constexpr uint16_t CONNECT_WAIT_MAX = 150;
+    static constexpr uint16_t CONNECT_WAIT_MAX = 150;// 等待连接超时阈值
 
     GimbalDriver() = default;
 
@@ -35,6 +38,7 @@ public:
 
     void disableMotors()
     {
+        // 使用的是 MIT 模式
         dm_motor_.Off(YAW_ID, BSP::Motor::DM::Model::MIT);
         dm_motor_.Off(PITCH_ID, BSP::Motor::DM::Model::MIT);
         motors_enabled_ = false;
@@ -42,14 +46,15 @@ public:
         encoder_initialized_ = false;
         connect_wait_counter_ = 0;
     }
-
-    bool processEnable()
+   
+    bool processEnable()// 安全上电状态机
     {
         if (enable_step_ == 0) return false;
 
         switch (enable_step_)
         {
             case 1:
+                //清除 Pitch 轴报错
                 dm_motor_.ClearErr(PITCH_ID, BSP::Motor::DM::Model::MIT);
                 enable_wait_ = 0;
                 enable_step_ = 2;
@@ -92,7 +97,7 @@ public:
         return false;
     }
 
-    bool processEncoderInit()
+    bool processEncoderInit()// 编码器零位校验状态机
     {
         if (encoder_initialized_) return true;
 
@@ -122,6 +127,7 @@ public:
     void sendTorque(uint8_t motor_id, float torque)
     {
         dm_motor_.ctrl_Mit(motor_id, 0.0f, 0.0f, 0.0f, 0.0f, torque);
+        //纯力矩控制，前四个全给 0，只给最后一个前馈扭矩 (torque) 赋值
     }
 
     void sendZeroTorque(uint8_t motor_id)
@@ -130,7 +136,7 @@ public:
     }
 
     void sendToChassis(float left_x, float left_y, float yaw_err,
-                       const Comm::ChassisMode &mode)
+                       const Comm::ChassisMode &mode)// 调用协议把底盘数据打包成 8 字节
     {
         g2c_.packFrame(left_x, left_y, yaw_err, mode);
 
@@ -155,7 +161,7 @@ public:
 
             if (size == DBUS_BUF_SIZE)
                 dr16_.parseData(dbus_rx_buffer_);
-
+            //重新开启下一次 DMA 空闲中断接收
             auto &uart3 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart3);
             HAL::UART::Data data{dbus_rx_buffer_, DBUS_BUF_SIZE};
             uart3.receive_dma_idle(data);
@@ -171,7 +177,7 @@ public:
                 imu_.DataUpdate(imu_rx_buffer_);
                 imu_initialized_ = true;
             }
-
+            //重新开启下一次 DMA 空闲中断接收
             auto &uart1 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart1);
             HAL::UART::Data data{imu_rx_buffer_, IMU_BUF_SIZE};
             uart1.receive_dma_idle(data);
@@ -181,24 +187,7 @@ public:
 
     void processUARTRxCplt(UART_HandleTypeDef *huart)
     {
-        // if (huart->Instance == USART6)
-        // {
-        //     if (__HAL_UART_GET_FLAG(huart, UART_FLAG_ORE) != RESET)
-        //         __HAL_UART_CLEAR_OREFLAG(huart);
-
-        //     if (huart->ErrorCode != HAL_UART_ERROR_NONE)
-        //         huart->ErrorCode = HAL_UART_ERROR_NONE;
-
-        //     Comm::vision.receive();
-
-        //     auto &uart6 = HAL::UART::get_uart_bus_instance().get_device(HAL::UART::UartDeviceId::HAL_Uart6);
-        //     HAL::UART::Data data{Comm::vision.getRxBuffer(), Comm::Vision::getRxSize()};
-        //     if (!uart6.receive(data))
-        //     {
-        //         HAL_UART_Receive_IT(huart, Comm::vision.getRxBuffer(), Comm::Vision::getRxSize());
-        //     }
-        // }
-        
+       
         // 视觉接收已迁移至 USB CDC
         (void)huart;
     }
@@ -248,7 +237,7 @@ private:
         HAL::UART::Data data{Comm::vision.getRxBuffer(), Comm::Vision::getRxSize()};
         uart6.receive(data);
     }
-
+    // 实例化底层的硬件驱动类
     BSP::Motor::DM::J4310<2> dm_motor_{0x00, {6, 8}, {4, 7}};
     BSP::REMOTE_CONTROL::RemoteController dr16_;
     Comm::GimbalToChassis g2c_;

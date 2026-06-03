@@ -176,9 +176,9 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-    if (huart->Instance == USART6) // 确保是发�? VOFA+ 的那个串�?
+    if (huart->Instance == USART6) // 确保是发�?? VOFA+ 的那个串�??
     {
-        vofa_tx_complete(); // 清除 busy 标志位，允许发�?�下�?�?
+        vofa_tx_complete(); // 清除 busy 标志位，允许发�?�下�??�??
     }
 }
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)

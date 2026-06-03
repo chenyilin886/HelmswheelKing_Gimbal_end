@@ -106,7 +106,6 @@ extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
   */
 
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
-uint16_t CDC_ReadRxData(uint8_t *buf, uint16_t max_len);
 
 /* USER CODE BEGIN EXPORTED_FUNCTIONS */
 

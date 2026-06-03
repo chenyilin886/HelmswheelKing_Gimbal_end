@@ -296,23 +296,14 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 {
   uint8_t result = USBD_OK;
+  /* USER CODE BEGIN 7 */
   USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef*)hUsbDeviceFS.pClassData;
-  
-  // 防止 USB 拔出时 hcdc 为空导致 HardFault
-  if (hcdc == NULL) return USBD_FAIL; 
-
-  taskENTER_CRITICAL(); // 进入临界区，屏蔽中断
-  
   if (hcdc->TxState != 0){
-    taskEXIT_CRITICAL(); // 如果在忙，提前退出临界区
     return USBD_BUSY;
   }
-  
   USBD_CDC_SetTxBuffer(&hUsbDeviceFS, Buf, Len);
   result = USBD_CDC_TransmitPacket(&hUsbDeviceFS);
-  
-  taskEXIT_CRITICAL(); // 【新增】退出临界区，恢复中断
-  
+  /* USER CODE END 7 */
   return result;
 }
 

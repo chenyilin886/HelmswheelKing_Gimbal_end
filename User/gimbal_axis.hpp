@@ -9,9 +9,9 @@
 #include <cmath>
 #include <cstdint>
 #include <algorithm>
-
+//云台的三种工作模式
 enum class GimbalMode { ANGLE, VELOCITY, VISION };
-
+//轴调参参数
 struct AxisTuneParams
 {
     float vel_kp, vel_kd, vel_wc, vel_b0, vel_max;
@@ -41,7 +41,7 @@ public:
     };
 
     GimbalAxis() = default;
-
+    //初始化
     void init(const Config &cfg)
     {
         cfg_ = cfg;
@@ -57,12 +57,12 @@ public:
             gravity_ff_ = Alg::Feedforward::Gravity(cfg_.tune.gravity_k, cfg_.tune.gravity_phi);
         }
     }
-
+    //串级控制的外环
     float computeAnglePID(float angle_err)
     {
         return angle_pid_.UpDate(angle_err, 0.0f);
     }
-
+    //处理目标速度突变
     float filterVelTarget(float raw_vel)
     {
         if (cfg_.use_td_filter)
@@ -72,7 +72,7 @@ public:
         }
         return raw_vel;
     }
-
+    //软限位
     float applyAngleSafetyLimit(float vel_target, float angle_deg) const
     {
         if (angle_deg >= cfg_.tune.angle_max_deg && vel_target > 0.0f)
@@ -81,57 +81,58 @@ public:
             return 0.0f;
         return vel_target;
     }
-
+    //计算输出力矩
     float computeTorque(GimbalMode mode, float vel_target, float vel_feedback, float angle_deg = 0.0f)
     {
+        // 如果触发了飞车保护，直接输出 0，电机断电
         if (runaway_flag_)
         {
             vel_adrc_.reset();
             angle_adrc_.reset();
             return 0.0f;
         }
-
+        //根据模式选择不同的 ADRC 控制器
         float torque = 0.0f;
         if (mode == GimbalMode::ANGLE || mode == GimbalMode::VISION)
         {
-            angle_adrc_.setTarget(vel_target);
+            angle_adrc_.setTarget(vel_target);// 角度ADRC内环
             torque = angle_adrc_.update(vel_feedback);
         }
         else
         {
-            vel_adrc_.setTarget(vel_target);
+            vel_adrc_.setTarget(vel_target);// 速度ADRC内环
             torque = vel_adrc_.update(vel_feedback);
         }
-
+        // 重力前馈补偿
         if (cfg_.use_gravity_ff)
         {
             gravity_ff_.GravityFeedforward(angle_deg);
             torque += gravity_ff_.getFeedforward();
         }
-
+        // 限幅与方向统一
         torque *= cfg_.tune.torque_sign;
         torque = std::clamp(torque, -cfg_.tune.torque_limit, cfg_.tune.torque_limit);
         return torque;
     }
-
+    //飞车保护
     bool checkRunaway(float vel_feedback)
     {
         if (std::fabs(vel_feedback) > cfg_.tune.vel_limit)
         {
-            runaway_counter_++;
+            runaway_counter_++;// 速度超过阈值，计数器累加
             if (runaway_counter_ >= cfg_.tune.runaway_thresh)
-                runaway_flag_ = true;
+                runaway_flag_ = true;// 连续超速一定次数，判定为飞车（失控）
         }
         else
         {
             if (runaway_counter_ > 0)
-                runaway_counter_--;
+                runaway_counter_--;// 速度降到安全线一半以下，解除飞车保护
             if (std::fabs(vel_feedback) < cfg_.tune.vel_limit * 0.5f)
                 runaway_flag_ = false;
         }
         return runaway_flag_;
     }
-
+    //一键清空所有控制器的历史状态
     void resetControllers()
     {
         vel_adrc_.reset();
